@@ -191,7 +191,7 @@ def     create_training_instances(input_files, tokenizer, max_seq_length,
     # that the "next sentence prediction" task doesn't span between documents.
     for input_file in input_files:
         with tf.gfile.GFile(input_file, "r") as reader:
-            pbar = tqdm(10000)
+            pbar = tqdm(12800)
             i = 0
             while True:
                 i += 1

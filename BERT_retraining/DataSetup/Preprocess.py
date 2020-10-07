@@ -3,7 +3,7 @@ from BERT_retraining.create_pretraining_data import create_training_instances, \
 from BERT_retraining import tokenization
 import tensorflow as tf
 import random
-import collections
+from BERT_retraining import utils
 
 
 class Preprocess:
@@ -78,7 +78,16 @@ class Preprocess:
     def write_instance_to_features(instances, tokenizer, max_seq_length,
                                         max_predictions_per_seq):
         """Create TF example files from `TrainingInstance`s."""
-        features_list = []
+        features = {
+            "input_ids" :[],
+        "input_mask" : [],
+        "segment_ids": [],
+        "masked_lm_positions": [],
+        "masked_lm_ids": [],
+        "masked_lm_weights": [],
+        "next_sentence_labels": []
+        }
+
         for (inst_index, instance) in enumerate(instances):
             input_ids = tokenizer.convert_tokens_to_ids(instance.tokens)
             input_mask = [1] * len(input_ids)
@@ -105,18 +114,16 @@ class Preprocess:
 
             next_sentence_label = 1 if instance.is_random_next else 0
 
-            features = collections.OrderedDict()
-            features["input_ids"] = input_ids
-            features["input_mask"] = input_mask
-            features["segment_ids"] = segment_ids
-            features["masked_lm_positions"] = masked_lm_positions
-            features["masked_lm_ids"] = masked_lm_ids
-            features["masked_lm_weights"] = masked_lm_weights
-            features["next_sentence_labels"] = [next_sentence_label]
+            features["input_ids"].append(input_ids)
+            features["input_mask"].append(input_mask)
+            features["segment_ids"].append(segment_ids)
+            features["masked_lm_positions"].append(masked_lm_positions)
+            features["masked_lm_ids"].append(masked_lm_ids)
+            features["masked_lm_weights"].append(masked_lm_weights)
+            features["next_sentence_labels"].append([next_sentence_label])
 
-            features_list.append(features)
 
-        return features_list
+        return features
 
 
 if __name__ == '__main__':
@@ -140,3 +147,7 @@ if __name__ == '__main__':
                                           max_seq_length=MAX_SEQ_LEN,
                                           max_predictions_per_seq=MAX_PREDS)
 
+    utils.save_dictionary(dictionary=features,
+        save_path="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/features.pkl")
+    loaded_features = utils.load_dictionary("/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/features.pkl")
+    print(loaded_features['input_ids'][0])
