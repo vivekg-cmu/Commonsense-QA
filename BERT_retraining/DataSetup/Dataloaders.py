@@ -6,7 +6,7 @@ class PretrainingDataset(data.Dataset):
         self.input_dict = input_dict
 
     def __len__(self):
-        return len(self.input_dict[self.input_dict[0]])
+        return len(self.input_dict["input_ids"])
 
     def __getitem__(self, index):
         input_ids = self.input_dict["input_ids"][index]
@@ -19,11 +19,3 @@ class PretrainingDataset(data.Dataset):
 
         return input_ids, input_mask, segment_ids, masked_lm_positions, masked_lm_ids,\
                masked_lm_weights, next_sentence_labels
-
-
-if __name__ == '__main__':
-    from BERT_retraining import utils
-
-    loaded_features = utils.load_dictionary(
-        "/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/features.pkl")
-    pretrain_loader = PretrainingDataset(input_dict=loaded_features)

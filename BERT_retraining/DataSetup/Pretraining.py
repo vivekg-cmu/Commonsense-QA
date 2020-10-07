@@ -122,32 +122,4 @@ class Pretraining:
             features["masked_lm_weights"].append(masked_lm_weights)
             features["next_sentence_labels"].append([next_sentence_label])
 
-
         return features
-
-
-if __name__ == '__main__':
-    MAX_SEQ_LEN = 128
-    MAX_PREDS = 20
-
-    preprocess = Pretraining(
-        vocab_file="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/bert-base-uncased-vocab.txt",
-        do_lower_case=True,
-        input_file="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/train.txt",
-        random_seed=12345,
-        max_seq_length=128,
-        dupe_factor=4,
-        max_predictions_per_seq=20,
-        masked_lm_prob=0.15,
-        output_file="Data/temp.txt",
-        short_seq_prob=0.1)
-
-    instances, tokenizer = preprocess.run_data_preprocessing()
-    features = preprocess.write_instance_to_features(instances=instances, tokenizer=tokenizer,
-                                          max_seq_length=MAX_SEQ_LEN,
-                                          max_predictions_per_seq=MAX_PREDS)
-
-    utils.save_dictionary(dictionary=features,
-        save_path="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/features.pkl")
-    loaded_features = utils.load_dictionary("/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/features.pkl")
-    print(loaded_features['input_ids'][0])

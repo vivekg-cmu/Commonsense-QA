@@ -35,10 +35,26 @@ class Preprocessors:
                                         + key + ".pkl")
         return features
 
-    def setup_loaders(self):
+    def get_features(self, load_flag=False):
+        if load_flag:
+            train_features = utils.load_dictionary("/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/train.pkl")
+            valid_features = utils.load_dictionary("/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/valid.pkl")
+        else:
+            train_features, valid_features = self.run_features()
+
+        return train_features, valid_features
+
+    def run_features(self):
         train_features = self.run_pretraining(key='train')
         valid_features = self.run_pretraining(key='train')
+        utils.save_dictionary(dictionary=train_features,
+                              save_path="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/train.pkl")
+        utils.save_dictionary(dictionary=valid_features,
+                              save_path="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/valid.pkl")
+        return train_features, valid_features
 
+    def get_loaders(self, load_flag=False):
+        train_features, valid_features = self.get_features(load_flag=load_flag)
         train_dataset = PretrainingDataset(input_dict=train_features)
         valid_dataset = PretrainingDataset(input_dict=valid_features)
 
@@ -47,4 +63,3 @@ class Preprocessors:
 
         self.train_loaders = data.DataLoader(train_dataset, **loader_args)
         self.valid_loaders = data.DataLoader(valid_dataset, **loader_args)
-
