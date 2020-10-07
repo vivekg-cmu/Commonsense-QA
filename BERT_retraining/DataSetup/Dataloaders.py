@@ -1,8 +1,7 @@
 from torch.utils import data
-import numpy as np
-import torch
 
-class PretrainingLoader(data.Dataset):
+
+class PretrainingDataset(data.Dataset):
     def __init__(self, input_dict):
         self.input_dict = input_dict
 
@@ -20,3 +19,11 @@ class PretrainingLoader(data.Dataset):
 
         return input_ids, input_mask, segment_ids, masked_lm_positions, masked_lm_ids,\
                masked_lm_weights, next_sentence_labels
+
+
+if __name__ == '__main__':
+    from BERT_retraining import utils
+
+    loaded_features = utils.load_dictionary(
+        "/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/features.pkl")
+    pretrain_loader = PretrainingDataset(input_dict=loaded_features)

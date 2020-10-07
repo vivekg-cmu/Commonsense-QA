@@ -6,7 +6,7 @@ import random
 from BERT_retraining import utils
 
 
-class Preprocess:
+class Pretraining:
     """
     This method is use to preprocess the data and convert it to the masked language model and
     next sentence prediction task
@@ -130,7 +130,7 @@ if __name__ == '__main__':
     MAX_SEQ_LEN = 128
     MAX_PREDS = 20
 
-    preprocess = Preprocess(
+    preprocess = Pretraining(
         vocab_file="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/bert-base-uncased-vocab.txt",
         do_lower_case=True,
         input_file="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/train.txt",
