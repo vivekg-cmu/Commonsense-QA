@@ -3,6 +3,7 @@ from BERT_retraining.create_pretraining_data import create_training_instances, \
 from BERT_retraining import tokenization
 import tensorflow as tf
 import random
+import collections
 
 
 class Preprocess:
@@ -16,15 +17,15 @@ class Preprocess:
         """
         Args:
             vocab_file (str): Path where the vocab is present
-            do_lower_case:
-            input_file:
-            random_seed:
-            max_seq_length:
-            dupe_factor:
-            short_seq_prob:
-            masked_lm_prob:
-            max_predictions_per_seq:
-            output_file:
+            do_lower_case (bool): This flag is used to select lowercase of a model
+            input_file (str): File to input_files string which is comma separated
+            random_seed (int): seed to initiaize masking
+            max_seq_length (int): maximum sequence length
+            dupe_factor (int): duplication for each sentence
+            short_seq_prob (float): sequence probabilty for each
+            masked_lm_prob (float): masked language probability
+            max_predictions_per_seq (int): maximum predictions
+            output_file (str): the output file
         """
         self.vocab_file = vocab_file
         self.do_lower_case = do_lower_case
@@ -37,7 +38,12 @@ class Preprocess:
         self.max_predictions_per_seq = max_predictions_per_seq
         self.output_file = output_file
 
-    def run_pretraining(self):
+    def run_data_preprocessing(self):
+        """
+        This method is used to run preprocessing
+        Returns:
+            instances (Instances): the instances consiting of the complete data
+        """
         tf.logging.set_verbosity(tf.logging.INFO)
 
         tokenizer = tokenization.FullTokenizer(
@@ -57,7 +63,7 @@ class Preprocess:
             self.short_seq_prob, self.masked_lm_prob, self.max_predictions_per_seq,
             rng)
 
-        return instances
+        return instances, tokenizer
 
     def write_output(self, instances, tokenizer):
         output_files = self.output_file.split(",")
@@ -68,4 +74,69 @@ class Preprocess:
         write_instance_to_example_files(instances, tokenizer, self.max_seq_length,
                                         self.max_predictions_per_seq, output_files)
 
+    @staticmethod
+    def write_instance_to_features(instances, tokenizer, max_seq_length,
+                                        max_predictions_per_seq):
+        """Create TF example files from `TrainingInstance`s."""
+        features_list = []
+        for (inst_index, instance) in enumerate(instances):
+            input_ids = tokenizer.convert_tokens_to_ids(instance.tokens)
+            input_mask = [1] * len(input_ids)
+            segment_ids = list(instance.segment_ids)
+            assert len(input_ids) <= max_seq_length
+
+            while len(input_ids) < max_seq_length:
+                input_ids.append(0)
+                input_mask.append(0)
+                segment_ids.append(0)
+
+            assert len(input_ids) == max_seq_length
+            assert len(input_mask) == max_seq_length
+            assert len(segment_ids) == max_seq_length
+
+            masked_lm_positions = list(instance.masked_lm_positions)
+            masked_lm_ids = tokenizer.convert_tokens_to_ids(instance.masked_lm_labels)
+            masked_lm_weights = [1.0] * len(masked_lm_ids)
+
+            while len(masked_lm_positions) < max_predictions_per_seq:
+                masked_lm_positions.append(0)
+                masked_lm_ids.append(0)
+                masked_lm_weights.append(0.0)
+
+            next_sentence_label = 1 if instance.is_random_next else 0
+
+            features = collections.OrderedDict()
+            features["input_ids"] = input_ids
+            features["input_mask"] = input_mask
+            features["segment_ids"] = segment_ids
+            features["masked_lm_positions"] = masked_lm_positions
+            features["masked_lm_ids"] = masked_lm_ids
+            features["masked_lm_weights"] = masked_lm_weights
+            features["next_sentence_labels"] = [next_sentence_label]
+
+            features_list.append(features)
+
+        return features_list
+
+
+if __name__ == '__main__':
+    MAX_SEQ_LEN = 128
+    MAX_PREDS = 20
+
+    preprocess = Preprocess(
+        vocab_file="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/bert-base-uncased-vocab.txt",
+        do_lower_case=True,
+        input_file="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/train.txt",
+        random_seed=12345,
+        max_seq_length=128,
+        dupe_factor=4,
+        max_predictions_per_seq=20,
+        masked_lm_prob=0.15,
+        output_file="Data/temp.txt",
+        short_seq_prob=0.1)
+
+    instances, tokenizer = preprocess.run_data_preprocessing()
+    features = preprocess.write_instance_to_features(instances=instances, tokenizer=tokenizer,
+                                          max_seq_length=MAX_SEQ_LEN,
+                                          max_predictions_per_seq=MAX_PREDS)
 

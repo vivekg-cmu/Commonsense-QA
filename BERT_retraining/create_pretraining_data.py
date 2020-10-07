@@ -22,6 +22,7 @@ import collections
 import random
 from BERT_retraining import tokenization
 import tensorflow as tf
+from tqdm import tqdm
 
 flags = tf.flags
 
@@ -176,7 +177,7 @@ def create_float_feature(values):
     return feature
 
 
-def create_training_instances(input_files, tokenizer, max_seq_length,
+def     create_training_instances(input_files, tokenizer, max_seq_length,
                               dupe_factor, short_seq_prob, masked_lm_prob,
                               max_predictions_per_seq, rng):
     """Create `TrainingInstance`s from raw text."""
@@ -190,7 +191,10 @@ def create_training_instances(input_files, tokenizer, max_seq_length,
     # that the "next sentence prediction" task doesn't span between documents.
     for input_file in input_files:
         with tf.gfile.GFile(input_file, "r") as reader:
+            pbar = tqdm(10000)
+            i = 0
             while True:
+                i += 1
                 line = tokenization.convert_to_unicode(reader.readline())
                 if not line:
                     break
@@ -202,7 +206,7 @@ def create_training_instances(input_files, tokenizer, max_seq_length,
                 tokens = tokenizer.tokenize(line)
                 if tokens:
                     all_documents[-1].append(tokens)
-
+                pbar.update(1)
     # Remove empty documents
     all_documents = [x for x in all_documents if x]
     rng.shuffle(all_documents)
