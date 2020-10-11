@@ -37,8 +37,10 @@ class Preprocessors:
 
     def get_features(self, load_flag=False):
         if load_flag:
-            train_features = utils.load_dictionary("/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/train.pkl")
-            valid_features = utils.load_dictionary("/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/valid.pkl")
+            train_features = \
+                utils.load_dictionary("/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/train.pkl")
+            valid_features = \
+                utils.load_dictionary("/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/valid.pkl")
         else:
             train_features, valid_features = self.run_features()
 
