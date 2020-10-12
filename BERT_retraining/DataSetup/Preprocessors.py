@@ -15,7 +15,7 @@ class Preprocessors:
 
     def run_pretraining(self, path="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/", key="train"):
         pretraining = Pretraining(
-            vocab_file="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/bert-base-uncased-vocab.txt",
+            vocab_file="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/bert-base-uncased-vocab.txt.1",
             do_lower_case=True,
             input_file=path + key + ".txt",
             random_seed=12345,

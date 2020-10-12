@@ -1,6 +1,6 @@
 import torch
 from BERT_retraining.DataSetup.Preprocessors import Preprocessors
-from BERT_retraining.Models.Pretraining import PretrainingModel
+from BERT_retraining.Models.DistilBERT import PretrainingModel
 from BERT_retraining import constants as con
 from torch import optim
 from tqdm import tqdm
@@ -58,7 +58,6 @@ class PretrainingTrainer:
                 print(batch_correct /  total_correct)
 
                 print('------------------------')
-
 
     def evaluate(self, masked_outputs, masked_lm_ids):
         masked_output_predictions = torch.argmax(masked_outputs, dim=-1).view(-1)
