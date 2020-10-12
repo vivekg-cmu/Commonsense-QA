@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append(".")
+
 from torch.utils import data
 import numpy as np
 

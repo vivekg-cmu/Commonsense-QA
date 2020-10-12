@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append(".")
+
 import torch
 from transformers import DistilBertTokenizer, DistilBertModel
 

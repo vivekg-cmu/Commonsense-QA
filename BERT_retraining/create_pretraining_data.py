@@ -13,6 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """Create masked LM/next sentence masked_lm TF examples for BERT."""
+import sys
+
+sys.path.append(".")
 
 from __future__ import absolute_import
 from __future__ import division

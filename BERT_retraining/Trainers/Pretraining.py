@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append(".")
+
 import torch
 from BERT_retraining.DataSetup.Preprocessors import Preprocessors
 from BERT_retraining.Models.DistilBERT import PretrainingModel

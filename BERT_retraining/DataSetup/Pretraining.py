@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append(".")
+
 from BERT_retraining.create_pretraining_data import create_training_instances, \
     write_instance_to_example_files
 from BERT_retraining import tokenization
