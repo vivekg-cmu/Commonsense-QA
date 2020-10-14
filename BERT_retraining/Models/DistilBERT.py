@@ -20,11 +20,10 @@ class PretrainingModel(torch.nn.Module):
         self.nsp_loss_func = torch.nn.CrossEntropyLoss()
 
     def forward(self, src, masked_lm_ids, masked_lm_positions, nsp_labels):
-        # embedded = self.embedding(src)
-        outputs = self.distil(src)
-        print(outputs)
-        # outputs, _ = self.rnn(embedded)
-        x
+        embedded = self.embedding(src)
+        # outputs = self.distil(src)
+        # print(outputs)
+        outputs, _ = self.rnn(embedded)
         logits = self.mlm(outputs)
         masked_outputs = torch.stack([torch.index_select(logits[i], dim=0, index=masked_lm_positions[i])
                        for i in range(8)])
