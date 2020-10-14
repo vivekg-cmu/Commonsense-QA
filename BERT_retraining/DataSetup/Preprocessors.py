@@ -13,9 +13,9 @@ class Preprocessors:
         self.train_loaders = None
         self.valid_loaders = None
 
-    def run_pretraining(self, path="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/", key="train"):
+    def run_pretraining(self, path="BERT_retraining/Data/", key="train"):
         pretraining = Pretraining(
-            vocab_file="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/bert-base-uncased-vocab.txt.1",
+            vocab_file="BERT_retraining/Data/bert-base-uncased-vocab.txt",
             do_lower_case=True,
             input_file=path + key + ".txt",
             random_seed=12345,
@@ -31,16 +31,16 @@ class Preprocessors:
                                                           max_seq_length=128,
                                                           max_predictions_per_seq=20)
         utils.save_dictionary(dictionary=features,
-                              save_path="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/"
+                              save_path="./BERT_retraining/Data/"
                                         + key + ".pkl")
         return features
 
     def get_features(self, load_flag=False):
         if load_flag:
             train_features = \
-                utils.load_dictionary("/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/train.pkl")
+                utils.load_dictionary("BERT_retraining/Data/train.pkl")
             valid_features = \
-                utils.load_dictionary("/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/valid.pkl")
+                utils.load_dictionary("BERT_retraining/Data/valid.pkl")
         else:
             train_features, valid_features = self.run_features()
 
@@ -50,9 +50,9 @@ class Preprocessors:
         train_features = self.run_pretraining(key='train')
         valid_features = self.run_pretraining(key='train')
         utils.save_dictionary(dictionary=train_features,
-                              save_path="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/train.pkl")
+                              save_path="BERT_retraining/Data/train.pkl")
         utils.save_dictionary(dictionary=valid_features,
-                              save_path="/home/pratik/Desktop/new_github/Commonsense-QA/BERT_retraining/Data/valid.pkl")
+                              save_path="BERT_retraining/Data/valid.pkl")
         return train_features, valid_features
 
     def get_loaders(self, load_flag=False):

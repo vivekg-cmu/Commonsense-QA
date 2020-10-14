@@ -18,7 +18,7 @@ class PretrainingTrainer:
 
     def setup_preprocessed_data(self):
         self.preprocessor = Preprocessors()
-        self.preprocessor.get_loaders(load_flag=True)
+        self.preprocessor.get_loaders(load_flag=False)
 
     def setup_model(self):
         # Create multilingual vocabulary

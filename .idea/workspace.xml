@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c059056e-f4e3-40a4-b3ec-06d2e6ca95b9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py" afterPath="$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py" />
-      <change beforePath="$PROJECT_DIR$/BERT_retraining/tokenization.py" afterPath="$PROJECT_DIR$/BERT_retraining/tokenization.py" />
+      <change beforePath="$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py" afterPath="$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py" />
+      <change beforePath="$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py" afterPath="$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,62 +17,8 @@
       <file leaf-file-name="Pretraining.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="861">
-              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_pretraining_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-              <folding>
-                <element signature="e#684#722#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BERT_retraining/constants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BERT_retraining/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tokenization.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BERT_retraining/tokenization.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="401" selection-end-column="0" />
-              <folding>
-                <element signature="e#643#681#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pretraining.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Pretraining.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -81,7 +27,7 @@
       <file leaf-file-name="Pretraining.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BERT_retraining/Models/Pretraining.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
+            <state relative-caret-position="-251">
               <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
@@ -98,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Preprocessors.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Preprocessors.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="121" lean-forward="false" selection-start-line="17" selection-start-column="121" selection-end-line="17" selection-end-column="121" />
+            <state relative-caret-position="345">
+              <caret line="66" column="74" lean-forward="false" selection-start-line="66" selection-start-column="74" selection-end-line="66" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -141,15 +87,15 @@
         <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocess.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/BERT_retraining/constants.py" />
-        <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Pretraining.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/Models/DistilBERT.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/Models/Pretraining.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/utils.py" />
-        <option value="$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/tokenization.py" />
+        <option value="$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py" />
+        <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py" />
       </list>
     </option>
   </component>
@@ -648,9 +594,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/Models/DistilBERT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/tokenization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2826">
+          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <element signature="e#643#681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3744">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="e#684#722#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Pretraining.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/Models/Pretraining.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-251">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
@@ -666,69 +672,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="121" lean-forward="false" selection-start-line="17" selection-start-column="121" selection-end-line="17" selection-end-column="121" />
+        <state relative-caret-position="345">
+          <caret line="66" column="74" lean-forward="false" selection-start-line="66" selection-start-column="74" selection-end-line="66" selection-end-column="74" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/Models/DistilBERT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/Models/Pretraining.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="e#684#722#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/tokenization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="401" selection-end-column="0" />
-          <folding>
-            <element signature="e#643#681#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
