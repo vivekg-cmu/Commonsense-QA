@@ -4,6 +4,7 @@ VALID_PATH = "valid_path"
 TEST_PATH = "test_path"
 
 CUDA = False
+BATCH_SIZE = 32
 
 
 

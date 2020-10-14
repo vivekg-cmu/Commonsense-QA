@@ -4,7 +4,7 @@ from BERT_retraining.DataSetup.Pretraining import Pretraining
 from BERT_retraining.DataSetup.Dataloaders import PretrainingDataset
 from BERT_retraining import utils
 from torch.utils import data
-
+from BERT_retraining import constants as con
 
 class Preprocessors:
 
@@ -60,7 +60,7 @@ class Preprocessors:
         train_dataset = PretrainingDataset(input_dict=train_features)
         valid_dataset = PretrainingDataset(input_dict=valid_features)
 
-        loader_args = dict(shuffle=True, batch_size=8, num_workers=8,
+        loader_args = dict(shuffle=True, batch_size=con.BATCH_SIZE, num_workers=8,
                            pin_memory=True)
 
         self.train_loaders = data.DataLoader(train_dataset, **loader_args)
