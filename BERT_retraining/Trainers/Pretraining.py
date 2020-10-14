@@ -86,7 +86,7 @@ class PretrainingTrainer:
         index = 0
 
         for input_ids, input_mask, segment_ids, masked_lm_positions, masked_lm_ids, masked_lm_weights, \
-            next_sentence_labels in valid_loader[:100]:
+            next_sentence_labels in valid_loader:
             self.optimizer.zero_grad()
             if con.CUDA:
                 input_ids = input_ids.cuda()
