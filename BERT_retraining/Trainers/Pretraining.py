@@ -44,7 +44,6 @@ class PretrainingTrainer:
         for input_ids, input_mask, segment_ids, masked_lm_positions, masked_lm_ids, masked_lm_weights, \
             next_sentence_labels in train_loader:
 
-
             if con.CUDA:
                 input_ids = input_ids.cuda()
                 input_mask = input_mask.cuda()
@@ -53,7 +52,6 @@ class PretrainingTrainer:
                 masked_lm_ids = masked_lm_ids.cuda()
                 masked_lm_weights = masked_lm_weights.cuda()
                 next_sentence_labels = next_sentence_labels.cuda()
-
 
             masked_outputs, next_sentence_outputs, mlm_loss, nsp_loss = self.model(input_ids, masked_lm_ids,
                                                                                    masked_lm_positions,

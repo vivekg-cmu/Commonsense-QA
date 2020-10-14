@@ -11,8 +11,8 @@ class PretrainingModel(torch.nn.Module):
         super(PretrainingModel, self).__init__()
 
         self.vocab_size = vocab_size
-        self.embedding = torch.nn.Embedding(vocab_size, 100)
-        self.rnn = torch.nn.LSTM(100, 100, batch_first=True)
+        # self.embedding = torch.nn.Embedding(vocab_size, 100)
+        # self.rnn = torch.nn.LSTM(100, 100, batch_first=True)
         self.distil = DistilBertModel.from_pretrained('distilbert-base-uncased',
                                                       return_dict=True)
         self.mlm = torch.nn.Linear(100, 30000)
@@ -21,10 +21,10 @@ class PretrainingModel(torch.nn.Module):
         self.nsp_loss_func = torch.nn.CrossEntropyLoss()
 
     def forward(self, src, masked_lm_ids, masked_lm_positions, nsp_labels):
-        embedded = self.embedding(src)
-        # outputs = self.distil(src)
+        # embedded = self.embedding(src)
+        outputs = self.distil(src)
         # print(outputs)
-        outputs, _ = self.rnn(embedded)
+        # outputs, _ = self.rnn(embedded)
         logits = self.mlm(outputs)
         masked_outputs = torch.stack([torch.index_select(logits[i], dim=0, index=masked_lm_positions[i])
                        for i in range(logits.shape[0])])
