@@ -13,13 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """Tokenization classes."""
-import sys
-
-sys.path.append(".")
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
+
+import sys
+sys.path.append(".")
 
 import collections
 import re
