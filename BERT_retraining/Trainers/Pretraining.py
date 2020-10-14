@@ -37,12 +37,56 @@ class PretrainingTrainer:
         batch_size = 8
 
         self.model.train()
-        train_loss = 0
+        total_loss = 0
         batch_correct = 0
         total_correct = 0
         index = 0
         for input_ids, input_mask, segment_ids, masked_lm_positions, masked_lm_ids, masked_lm_weights, \
             next_sentence_labels in train_loader:
+            self.optimizer.zero_grad()
+            if con.CUDA:
+                input_ids = input_ids.cuda()
+                input_mask = input_mask.cuda()
+                segment_ids = segment_ids.cuda()
+                masked_lm_positions = masked_lm_positions.cuda()
+                masked_lm_ids = masked_lm_ids.cuda()
+                masked_lm_weights = masked_lm_weights.cuda()
+                next_sentence_labels = next_sentence_labels.cuda()
+
+            masked_outputs, next_sentence_outputs, mlm_loss, nsp_loss = self.model(input_ids, masked_lm_ids,
+                                                                                   masked_lm_positions,
+                                                                                   next_sentence_labels)
+            batch_loss = mlm_loss + nsp_loss
+            total_loss += batch_loss
+
+            batch_loss.backward()
+            torch.nn.utils.clip_grad_norm_(self.model.parameters(), 0.5)
+            self.optimizer.step()
+
+            batch_correct += self.evaluate(masked_outputs=masked_outputs,
+                                           masked_lm_ids=masked_lm_ids)
+            total_correct += (8 * 20)
+            index += 1
+
+            if index % 200 == 0:
+                print("Running train loss", batch_loss)
+                print("Running train acc", batch_correct / total_correct)
+
+        print("Total train loss:", total_loss / index)
+        print("Total train acc:", batch_correct / total_correct)
+        print('------------------------')
+        self.validation()
+
+    def validation(self):
+        valid_loader = self.preprocessor.valid_loaders
+        self.model.eval()
+        total_loss = 0
+        batch_correct = 0
+        total_correct = 0
+        index = 0
+
+        for input_ids, input_mask, segment_ids, masked_lm_positions, masked_lm_ids, masked_lm_weights, \
+            next_sentence_labels in valid_loader:
 
             if con.CUDA:
                 input_ids = input_ids.cuda()
@@ -57,35 +101,28 @@ class PretrainingTrainer:
                                                                                    masked_lm_positions,
                                                                                    next_sentence_labels)
             batch_loss = mlm_loss + nsp_loss
-            self.optimizer.zero_grad()
-            batch_loss.backward()
+            total_loss += batch_loss
             torch.nn.utils.clip_grad_norm_(self.model.parameters(), 0.5)
-            self.optimizer.step()
             batch_correct += self.evaluate(masked_outputs=masked_outputs, masked_lm_ids=masked_lm_ids)
             total_correct += (8 * 20)
             index += 1
 
-            if index % 50 == 0:
-                print("total_loss", batch_loss)
-                print(batch_correct /  total_correct)
-
-                print('------------------------')
+        print("Total valid loss:", total_loss / index)
+        print("Total valid acc:", batch_correct / total_correct)
+        print('------------------------')
 
     def evaluate(self, masked_outputs, masked_lm_ids):
         masked_output_predictions = torch.argmax(masked_outputs, dim=-1).view(-1)
         masked_lm_ids = masked_lm_ids.view(-1)
         correct = torch.sum(torch.eq(masked_output_predictions, masked_lm_ids))
-
-
         return correct.cpu().detach().numpy()
-
-
 
     def run_pretraining(self):
         self.setup_preprocessed_data()
         self.setup_model()
         self.setup_scheduler_optimizer()
-        self.train_model()
+        for epoch in range(10):
+            self.train_model()
 
 
 if __name__ == '__main__':
