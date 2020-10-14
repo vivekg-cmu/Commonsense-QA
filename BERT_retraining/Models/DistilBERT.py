@@ -12,6 +12,7 @@ class PretrainingModel(torch.nn.Module):
 
         self.vocab_size = vocab_size
         self.embedding = torch.nn.Embedding(vocab_size, 100)
+        self.rnn = torch.nn.LSTM(100, 100, batch_first=True)
         self.distil = DistilBertModel.from_pretrained('distilbert-base-uncased',
                                                       return_dict=True)
         self.mlm = torch.nn.Linear(100, 30000)
