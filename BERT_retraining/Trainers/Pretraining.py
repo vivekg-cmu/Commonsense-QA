@@ -86,8 +86,8 @@ class PretrainingTrainer:
         index = 0
 
         for input_ids, input_mask, segment_ids, masked_lm_positions, masked_lm_ids, masked_lm_weights, \
-            next_sentence_labels in valid_loader:
-
+            next_sentence_labels in valid_loader[:100]:
+            self.optimizer.zero_grad()
             if con.CUDA:
                 input_ids = input_ids.cuda()
                 input_mask = input_mask.cuda()
@@ -101,8 +101,7 @@ class PretrainingTrainer:
                                                                                    masked_lm_positions,
                                                                                    next_sentence_labels)
             batch_loss = mlm_loss + nsp_loss
-            total_loss += batch_loss
-            torch.nn.utils.clip_grad_norm_(self.model.parameters(), 0.5)
+            total_loss += batch_loss.cpu().detach().numpy()
             batch_correct += self.evaluate(masked_outputs=masked_outputs, masked_lm_ids=masked_lm_ids)
             total_correct += (8 * 20)
             index += 1
