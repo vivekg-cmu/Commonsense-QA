@@ -27,7 +27,7 @@ class PretrainingModel(torch.nn.Module):
         outputs, _ = self.rnn(embedded)
         logits = self.mlm(outputs)
         masked_outputs = torch.stack([torch.index_select(logits[i], dim=0, index=masked_lm_positions[i])
-                       for i in range(8)])
+                       for i in range(logits.shape[0])])
         next_sentence_outputs = self.nsp(outputs[:, 0, :])
 
         mlm_loss = self.mlm_loss(masked_outputs=masked_outputs,

@@ -18,7 +18,7 @@ class PretrainingTrainer:
 
     def setup_preprocessed_data(self):
         self.preprocessor = Preprocessors()
-        self.preprocessor.get_loaders(load_flag=False)
+        self.preprocessor.get_loaders(load_flag=True)
 
     def setup_model(self):
         # Create multilingual vocabulary
@@ -28,7 +28,7 @@ class PretrainingTrainer:
             self.model = self.model.cuda()
 
     def setup_scheduler_optimizer(self):
-        lr_rate = 0.001
+        lr_rate = 2e-5
         self.optimizer = optim.Adam(self.model.parameters(),
                                     lr=lr_rate, weight_decay=0)
 
@@ -43,6 +43,18 @@ class PretrainingTrainer:
         index = 0
         for input_ids, input_mask, segment_ids, masked_lm_positions, masked_lm_ids, masked_lm_weights, \
             next_sentence_labels in train_loader:
+
+
+            if con.CUDA:
+                input_ids = input_ids.cuda()
+                input_mask = input_mask.cuda()
+                segment_ids = segment_ids.cuda()
+                masked_lm_positions = masked_lm_positions.cuda()
+                masked_lm_ids = masked_lm_ids.cuda()
+                masked_lm_weights = masked_lm_weights.cuda()
+                next_sentence_labels = next_sentence_labels.cuda()
+
+
             masked_outputs, next_sentence_outputs, mlm_loss, nsp_loss = self.model(input_ids, masked_lm_ids,
                                                                                    masked_lm_positions,
                                                                                    next_sentence_labels)
@@ -69,7 +81,7 @@ class PretrainingTrainer:
         correct = torch.sum(torch.eq(masked_output_predictions, masked_lm_ids))
 
 
-        return correct.numpy()
+        return correct.cpu().detach().numpy()
 
 
 
