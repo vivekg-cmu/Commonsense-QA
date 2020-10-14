@@ -57,8 +57,6 @@ class PretrainingTrainer:
                                                                                    masked_lm_positions,
                                                                                    next_sentence_labels)
             batch_loss = mlm_loss + nsp_loss
-
-
             self.optimizer.zero_grad()
             batch_loss.backward()
             torch.nn.utils.clip_grad_norm_(self.model.parameters(), 0.5)

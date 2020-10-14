@@ -15,17 +15,22 @@ class PretrainingModel(torch.nn.Module):
         # self.rnn = torch.nn.LSTM(100, 100, batch_first=True)
         self.distil = DistilBertModel.from_pretrained('distilbert-base-uncased',
                                                       return_dict=True)
-        self.mlm = torch.nn.Linear(100, 30000)
-        self.nsp = torch.nn.Linear(100, 2)
+
+        for name, param in self.distil.named_parameters():
+            if "embeddings.word_embeddings.weight" in name:
+                self.mlm = param
+                break
+
+        self.nsp = torch.nn.Linear(768, 2)
         self.mlm_loss_func = torch.nn.CrossEntropyLoss(ignore_index=0)
         self.nsp_loss_func = torch.nn.CrossEntropyLoss()
 
     def forward(self, src, masked_lm_ids, masked_lm_positions, nsp_labels):
         # embedded = self.embedding(src)
-        outputs = self.distil(src)
+        outputs = self.distil(src).last_hidden_state
         # print(outputs)
         # outputs, _ = self.rnn(embedded)
-        logits = self.mlm(outputs)
+        logits = torch.matmul(outputs, self.mlm.T)
         masked_outputs = torch.stack([torch.index_select(logits[i], dim=0, index=masked_lm_positions[i])
                        for i in range(logits.shape[0])])
         next_sentence_outputs = self.nsp(outputs[:, 0, :])
@@ -37,7 +42,7 @@ class PretrainingModel(torch.nn.Module):
         return masked_outputs, next_sentence_outputs, mlm_loss, nsp_loss
 
     def mlm_loss(self, masked_outputs, masked_lm_ids):
-        a = masked_outputs.view(-1, 30000)
+        a = masked_outputs.view(-1, 30522)
         b = masked_lm_ids.view(-1)
         return self.mlm_loss_func(input=a, target=b)
 
