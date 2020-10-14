@@ -121,6 +121,8 @@ class PretrainingTrainer:
         self.setup_scheduler_optimizer()
         for epoch in range(10):
             self.train_model()
+            torch.save(self.model.distil.state_dict(), "BERT_retraining/Data/core_model" + epoch)
+            torch.save(self.model.state_dict(), "BERT_retraining/Data/mlm_nsp_model" + epoch)
 
 
 if __name__ == '__main__':
