@@ -119,10 +119,10 @@ class PretrainingTrainer:
         self.setup_preprocessed_data()
         self.setup_model()
         self.setup_scheduler_optimizer()
-        for epoch in range(10):
+        for epoch in range(30):
             self.train_model()
-            torch.save(self.model.distil.state_dict(), "BERT_retraining/Data/core_model" + epoch)
-            torch.save(self.model.state_dict(), "BERT_retraining/Data/mlm_nsp_model" + epoch)
+            torch.save(self.model.distil.state_dict(), "BERT_retraining/Data/core_model" + str(epoch))
+            torch.save(self.model.state_dict(), "BERT_retraining/Data/mlm_nsp_model" + str(epoch))
 
 
 if __name__ == '__main__':
