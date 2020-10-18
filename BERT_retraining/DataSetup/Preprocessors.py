@@ -19,17 +19,17 @@ class Preprocessors:
             do_lower_case=True,
             input_file=path + key + ".txt",
             random_seed=12345,
-            max_seq_length=128,
+            max_seq_length=32,
             dupe_factor=4,
-            max_predictions_per_seq=20,
+            max_predictions_per_seq=5,
             masked_lm_prob=0.15,
             output_file="Data/temp.txt",
             short_seq_prob=0.1)
 
         instances, tokenizer = pretraining.run_data_preprocessing()
         features = pretraining.write_instance_to_features(instances=instances, tokenizer=tokenizer,
-                                                          max_seq_length=128,
-                                                          max_predictions_per_seq=20)
+                                                          max_seq_length=32,
+                                                          max_predictions_per_seq=5)
         utils.save_dictionary(dictionary=features,
                               save_path="./BERT_retraining/Data/"
                                         + key + ".pkl")

@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c059056e-f4e3-40a4-b3ec-06d2e6ca95b9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/BERT_retraining/Concepnet/concept_train.txt" afterPath="$PROJECT_DIR$/BERT_retraining/Concepnet/concept_train.txt" />
       <change beforePath="$PROJECT_DIR$/BERT_retraining/DataSetup/Conceptnet.py" afterPath="$PROJECT_DIR$/BERT_retraining/DataSetup/Conceptnet.py" />
+      <change beforePath="$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py" afterPath="$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py" />
+      <change beforePath="$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py" afterPath="$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py" />
+      <change beforePath="$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py" afterPath="$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Pretraining.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Pretraining.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="117" column="29" lean-forward="false" selection-start-line="117" selection-start-column="29" selection-end-line="117" selection-end-column="29" />
+            <state relative-caret-position="145">
+              <caret line="104" column="48" lean-forward="false" selection-start-line="104" selection-start-column="48" selection-end-line="104" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -37,18 +41,18 @@
       <file leaf-file-name="Preprocessors.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="-550">
+              <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Conceptnet.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Conceptnet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Conceptnet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+            <state relative-caret-position="159">
+              <caret line="17" column="60" lean-forward="false" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -57,8 +61,8 @@
       <file leaf-file-name="create_pretraining_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            <state relative-caret-position="270">
+              <caret line="181" column="4" lean-forward="false" selection-start-line="181" selection-start-column="4" selection-end-line="181" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -92,14 +96,14 @@
         <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/Models/Pretraining.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/utils.py" />
-        <option value="$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/tokenization.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/Models/DistilBERT.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/constants.py" />
-        <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py" />
-        <option value="$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/LoadConceptnet.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Conceptnet.py" />
+        <option value="$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py" />
+        <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py" />
+        <option value="$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py" />
       </list>
     </option>
   </component>
@@ -144,6 +148,12 @@
               <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
               <item name="BERT_retraining" type="462c0819:PsiDirectoryNode" />
               <item name="Concepnet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Commonsense-QA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
+              <item name="BERT_retraining" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Commonsense-QA" type="b2602c69:ProjectViewProjectNode" />
@@ -668,14 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="117" column="29" lean-forward="false" selection-start-line="117" selection-start-column="29" selection-end-line="117" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BERT_retraining/Concepnet/concept_train.txt">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="0">
@@ -685,24 +687,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="181" column="4" lean-forward="false" selection-start-line="181" selection-start-column="4" selection-end-line="181" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Conceptnet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+        <state relative-caret-position="159">
+          <caret line="17" column="60" lean-forward="false" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-550">
+          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="104" column="48" lean-forward="false" selection-start-line="104" selection-start-column="48" selection-end-line="104" selection-end-column="48" />
           <folding />
         </state>
       </provider>

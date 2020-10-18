@@ -16,7 +16,7 @@ class ConceptNet:
 
     def write_data(self):
         with open(self.base_path + "concept_train.txt", 'w') as fh:
-            fh.writelines([x + '\n' for x in self.conceptnet_data])
+            fh.writelines([x + '\n\n' for x in self.conceptnet_data])
 
     def load_concept_data(self):
         extensions = ["train100k.txt", "train300k.txt", "train600k.txt"]
@@ -34,13 +34,3 @@ class ConceptNet:
 if __name__ == '__main__':
     c = ConceptNet()
     c.setup()
-
-
-
-
-
-
-
-
-
-
