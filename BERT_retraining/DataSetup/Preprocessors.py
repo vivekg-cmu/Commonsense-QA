@@ -60,8 +60,7 @@ class Preprocessors:
         train_dataset = PretrainingDataset(input_dict=train_features)
         valid_dataset = PretrainingDataset(input_dict=valid_features)
 
-        loader_args = dict(shuffle=True, batch_size=con.BATCH_SIZE, num_workers=8,
-                           pin_memory=True)
+        loader_args = dict(shuffle=True, batch_size=con.BATCH_SIZE)
 
         self.train_loaders = data.DataLoader(train_dataset, **loader_args)
         self.valid_loaders = data.DataLoader(valid_dataset, **loader_args)
