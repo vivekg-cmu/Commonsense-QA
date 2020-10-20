@@ -1,7 +1,10 @@
 import sys
+
 sys.path.append(".")
 import pandas as pd
 from transformers import DistilBertTokenizer
+from tqdm import tqdm
+from utils import save_dictionary
 
 
 class Preprocessor:
@@ -21,24 +24,27 @@ class Preprocessor:
             "train": {
                 "ans_a": [],
                 "ans_b": [],
-                "ans_c": []
+                "ans_c": [],
+                "label": []
             },
             "valid": {
                 "ans_a": [],
                 "ans_b": [],
-                "ans_c": []
+                "ans_c": [],
+                "label": []
             },
             "test": {
                 "ans_a": [],
                 "ans_b": [],
-                "ans_c": []
+                "ans_c": [],
+                "label": []
             }
         }
 
     def setup_tokenizer(self):
         self.tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased',
                                                              max_length=256, padding="max_length",
-                                                             truncation=True)
+                                                             truncation=True, is_split_into_words=False)
         print(self.tokenizer)
 
     def load_data(self):
@@ -48,23 +54,27 @@ class Preprocessor:
 
     def tokenize_data(self, data, key):
 
-        question = data['question']
+        questions = data['question']
         labels = data['labels']
-        context = data['context']
-        ans_a = data["ans_a"]
-        ans_b = data["ans_b"]
-        ans_c = data["ans_c"]
+        contexts = data['context']
 
-        for i in range(len(data)):
-            self.input_dict[key]["ans_a"].append([])
-            print(self.tokenizer(ans_a[i], return_tensors="pt"))
-
-            break
+        for i in tqdm(range(len(data))):
+            for ans in ["ans_a", "ans_b", "ans_c"]:
+                answer = self.tokenizer(text=data[ans][i])['input_ids']
+                context = self.tokenizer(text=contexts[i])['input_ids'][1:]
+                question = self.tokenizer(text=questions[i])['input_ids'][1:]
+                input_line = answer + context + question
+                self.input_dict[key][ans].append(input_line + [0 for _ in range(512 - len(input_line))])
+            self.input_dict[key]["label"].append(labels[i])
 
     def setup(self):
         self.load_data()
         self.setup_tokenizer()
         self.tokenize_data(data=self.train_data, key="train")
+        self.tokenize_data(data=self.valid_data, key="valid")
+        self.tokenize_data(data=self.test_data, key="test")
+        save_dictionary(dictionary=self.input_dict,
+                        save_path="Downstream/Data/input_dict.pkl")
 
 
 if __name__ == '__main__':
