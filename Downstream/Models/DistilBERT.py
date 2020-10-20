@@ -6,7 +6,7 @@ import torch
 from transformers import DistilBertTokenizer, DistilBertModel
 
 
-class PretrainingModel(torch.nn.Module):
+class DownstreamModel(torch.nn.Module):
     def __init__(self, vocab_size=31000):
         super(PretrainingModel, self).__init__()
         self.vocab_size = vocab_size
