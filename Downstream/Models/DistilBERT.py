@@ -8,7 +8,7 @@ from transformers import DistilBertTokenizer, DistilBertModel
 
 class DownstreamModel(torch.nn.Module):
     def __init__(self, vocab_size=31000):
-        super(PretrainingModel, self).__init__()
+        super(DownstreamModel, self).__init__()
         self.vocab_size = vocab_size
         self.distil = DistilBertModel.from_pretrained('distilbert-base-uncased',
                                                       return_dict=True)
