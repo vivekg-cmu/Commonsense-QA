@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c059056e-f4e3-40a4-b3ec-06d2e6ca95b9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Downstream/utils.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Downstream/Preprocess/Dataloaders.py" />
+      <change beforePath="$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py" afterPath="$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py" />
       <change beforePath="$PROJECT_DIR$/Downstream/Preprocess/Preprocess.py" afterPath="$PROJECT_DIR$/Downstream/Preprocess/Preprocess.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Preprocess.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Preprocess.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/Preprocess.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="76" column="65" lean-forward="false" selection-start-line="76" selection-start-column="65" selection-end-line="76" selection-end-column="65" />
+            <state relative-caret-position="1314">
+              <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,37 +45,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dev_data.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Downstream/Data/dev_data.csv">
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dev_paper_pandas2.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Downstream/Data/dev_paper_pandas2.csv">
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="-756">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+      <file leaf-file-name="Dataloaders.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Dataloaders.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py">
+        <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/Dataloaders.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="-14">
+              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -105,7 +90,6 @@
         <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocess.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Pretraining.py" />
-        <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/Models/Pretraining.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/utils.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/tokenization.py" />
@@ -117,6 +101,8 @@
         <option value="$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py" />
         <option value="$PROJECT_DIR$/Downstream/Preprocess/Preprocess.py" />
+        <option value="$PROJECT_DIR$/Downstream/Preprocess/Dataloaders.py" />
+        <option value="$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py" />
       </list>
     </option>
   </component>
@@ -153,12 +139,13 @@
             <path>
               <item name="Commonsense-QA" type="b2602c69:ProjectViewProjectNode" />
               <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
-              <item name="BERT_retraining" type="462c0819:PsiDirectoryNode" />
+              <item name="Downstream" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Commonsense-QA" type="b2602c69:ProjectViewProjectNode" />
               <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
               <item name="Downstream" type="462c0819:PsiDirectoryNode" />
+              <item name="Preprocess" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -345,14 +332,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BERT_retraining/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -645,14 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Downstream/Data/dev_paper_pandas2.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
@@ -683,14 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-702">
-          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BERT_retraining/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-54">
@@ -707,10 +670,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/Dataloaders.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="65" column="74" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="65" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/Preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="76" column="65" lean-forward="false" selection-start-line="76" selection-start-column="65" selection-end-line="76" selection-end-column="65" />
+        <state relative-caret-position="1314">
+          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
