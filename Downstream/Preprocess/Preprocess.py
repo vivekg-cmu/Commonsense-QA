@@ -83,7 +83,6 @@ class Preprocessor:
         self.valid_loaders = data.DataLoader(valid_dataset, **loader_args)
         self.test_loaders = data.DataLoader(test_dataset, **loader_args)
 
-
     def setup(self):
         self.load_data()
         self.setup_tokenizer()

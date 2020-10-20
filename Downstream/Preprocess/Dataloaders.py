@@ -11,7 +11,7 @@ class DownstreamDataset(data.Dataset):
         self.input_dict = input_dict
 
     def __len__(self):
-        return len(self.input_dict["labels"])
+        return len(self.input_dict["label"])
 
     def __getitem__(self, index):
         ans_a = np.array(self.input_dict["ans_a"][index])
