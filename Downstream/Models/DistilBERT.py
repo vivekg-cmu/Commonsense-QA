@@ -26,7 +26,7 @@ class DownstreamModel(torch.nn.Module):
         return answer_preds, qa_loss
 
     def qa_loss(self, answer_logits, labels):
-        return self.nsp_loss_func(input=answer_logits.view(-1, 2),
+        return self.cls_loss_func(input=answer_logits.view(-1, 2),
                                   target=labels.view(-1))
 
 

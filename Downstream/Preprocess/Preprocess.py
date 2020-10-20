@@ -87,8 +87,8 @@ class Preprocessor:
         self.load_data()
         self.setup_tokenizer()
         self.tokenize_data(data=self.train_data, key="train")
-        self.tokenize_data(data=self.valid_data, key="valid")
-        self.tokenize_data(data=self.test_data, key="test")
+        # self.tokenize_data(data=self.valid_data, key="valid")
+        # self.tokenize_data(data=self.test_data, key="test")
         # save_dictionary(dictionary=self.input_dict,
         #                 save_path="Downstream/Data/input_dict.pkl")
         self.get_loaders()
