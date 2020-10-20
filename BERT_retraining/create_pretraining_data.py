@@ -13,15 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """Create masked LM/next sentence masked_lm TF examples for BERT."""
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
+
+import sys
+sys.path.append(".")
 
 import collections
 import random
 from BERT_retraining import tokenization
 import tensorflow as tf
+from tqdm import tqdm
 
 flags = tf.flags
 
@@ -190,7 +193,10 @@ def create_training_instances(input_files, tokenizer, max_seq_length,
     # that the "next sentence prediction" task doesn't span between documents.
     for input_file in input_files:
         with tf.gfile.GFile(input_file, "r") as reader:
+            pbar = tqdm(2000000)
+            i = 0
             while True:
+                i += 1
                 line = tokenization.convert_to_unicode(reader.readline())
                 if not line:
                     break
@@ -202,7 +208,7 @@ def create_training_instances(input_files, tokenizer, max_seq_length,
                 tokens = tokenizer.tokenize(line)
                 if tokens:
                     all_documents[-1].append(tokens)
-
+                pbar.update(1)
     # Remove empty documents
     all_documents = [x for x in all_documents if x]
     rng.shuffle(all_documents)
@@ -249,7 +255,9 @@ def create_instances_from_document(
     current_chunk = []
     current_length = 0
     i = 0
+    pbar = tqdm(len(document))
     while i < len(document):
+        pbar.update(1)
         segment = document[i]
         current_chunk.append(segment)
         current_length += len(segment)
