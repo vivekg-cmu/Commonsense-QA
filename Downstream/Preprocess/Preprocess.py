@@ -5,7 +5,9 @@ import pandas as pd
 from transformers import DistilBertTokenizer
 from tqdm import tqdm
 from Downstream.utils import save_dictionary
-
+from torch.utils import data
+from Downstream import constants as con
+from Downstream.Preprocess.Dataloaders import DownstreamDataset
 
 class Preprocessor:
 
@@ -17,8 +19,11 @@ class Preprocessor:
         self.train_data = None
         self.valid_data = None
         self.test_data = None
-
         self.tokenizer = None
+
+        self.train_loaders = None
+        self.valid_loaders = None
+        self.test_loaders = None
 
         self.input_dict = {
             "train": {
@@ -67,15 +72,17 @@ class Preprocessor:
                 self.input_dict[key][ans].append(input_line + [0 for _ in range(512 - len(input_line))])
             self.input_dict[key]["label"].append(labels[i])
 
-    def get_loaders(self, load_flag=False):
-        train_features, valid_features = self.get_features(load_flag=load_flag)
-        train_dataset = PretrainingDataset(input_dict=train_features)
-        valid_dataset = PretrainingDataset(input_dict=valid_features)
+    def get_loaders(self):
+        train_dataset = DownstreamDataset(input_dict=self.input_dict["train"])
+        valid_dataset = DownstreamDataset(input_dict=self.input_dict["valid"])
+        test_dataset = DownstreamDataset(input_dict=self.input_dict["test"])
 
         loader_args = dict(shuffle=True, batch_size=con.BATCH_SIZE)
 
         self.train_loaders = data.DataLoader(train_dataset, **loader_args)
         self.valid_loaders = data.DataLoader(valid_dataset, **loader_args)
+        self.test_loaders = data.DataLoader(test_dataset, **loader_args)
+
 
     def setup(self):
         self.load_data()
@@ -83,8 +90,9 @@ class Preprocessor:
         self.tokenize_data(data=self.train_data, key="train")
         self.tokenize_data(data=self.valid_data, key="valid")
         self.tokenize_data(data=self.test_data, key="test")
-        save_dictionary(dictionary=self.input_dict,
-                        save_path="Downstream/Data/input_dict.pkl")
+        # save_dictionary(dictionary=self.input_dict,
+        #                 save_path="Downstream/Data/input_dict.pkl")
+        self.get_loaders()
 
 
 if __name__ == '__main__':

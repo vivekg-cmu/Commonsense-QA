@@ -1,0 +1,2 @@
+CUDA = False
+BATCH_SIZE = 8
