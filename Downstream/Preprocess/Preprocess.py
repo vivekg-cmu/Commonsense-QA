@@ -13,8 +13,8 @@ from Downstream.Preprocess.Dataloaders import DownstreamDataset
 class Preprocessor:
 
     def __init__(self):
-        self.train_path = "Downstream/Data/train_data.csv"
-        self.valid_path = "Downstream/Data/dev_data.csv"
+        self.train_path = "Downstream/Data/train_pandas.csv"
+        self.valid_path = "Downstream/Data/dev_pandas.csv"
 
         self.train_data = None
         self.valid_data = None
