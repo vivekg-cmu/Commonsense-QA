@@ -38,15 +38,13 @@ class DownstreamTrainer:
         batch_correct = 0
         total_correct = 0
         index = 0
-        for ans_a, ans_b, ans_c, label in train_loader:
+        for ans, label in train_loader:
             self.optimizer.zero_grad()
             if con.CUDA:
-                ans_a = ans_a.cuda()
-                ans_b = ans_b.cuda()
-                ans_c = ans_c.cuda()
+                ans = ans.cuda()
                 label = label.cuda()
 
-            answer_preds, qa_loss = self.model(ans_a, ans_b, ans_c, label)
+            answer_preds, qa_loss = self.model(ans, label)
             total_loss += qa_loss
             qa_loss.backward()
             torch.nn.utils.clip_grad_norm_(self.model.parameters(), 0.5)

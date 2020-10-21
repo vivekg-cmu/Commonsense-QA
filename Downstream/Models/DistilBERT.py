@@ -24,12 +24,9 @@ class DownstreamModel(torch.nn.Module):
 
         self.cls_loss_func = torch.nn.CrossEntropyLoss()
 
-    def forward(self, ans_a, ans_b, ans_c, labels):
-        ans_a_cls = self.distil(ans_a).last_hidden_state[:, 0, :].squeeze(1)
-        ans_b_cls = self.distil(ans_b).last_hidden_state[:, 0, :].squeeze(1)
-        ans_c_cls = self.distil(ans_c).last_hidden_state[:, 0, :].squeeze(1)
-        linear_input = torch.cat([ans_a_cls, ans_b_cls, ans_c_cls], dim=-1)
-        answer_logits = self.cls_layer(linear_input)
+    def forward(self, ans, labels):
+        ans_cls = self.distil(ans).last_hidden_state[:, 0, :].squeeze(1)
+        answer_logits = self.cls_layer(ans_cls)
         answer_logits = self.relu(answer_logits)
         answer_logits = self.cls_layer2(answer_logits)
         answer_logits = self.relu2(answer_logits)
