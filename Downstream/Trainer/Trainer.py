@@ -26,7 +26,7 @@ class DownstreamTrainer:
             self.model = self.model.cuda()
 
     def setup_scheduler_optimizer(self):
-        lr_rate = 2e-5
+        lr_rate = 1e-5
         self.optimizer = optim.Adam(self.model.parameters(),
                                     lr=lr_rate, weight_decay=0)
 
@@ -56,7 +56,7 @@ class DownstreamTrainer:
             total_correct += con.BATCH_SIZE
             index += 1
 
-            if index % 200 == 0:
+            if index % 5 == 0:
                 print("Running train loss", qa_loss)
                 print("Running train acc", batch_correct / total_correct)
 
@@ -73,7 +73,7 @@ class DownstreamTrainer:
         self.setup_preprocessed_data()
         self.setup_model()
         self.setup_scheduler_optimizer()
-        for epoch in range(1):
+        for epoch in range(30):
             self.train_model()
             # torch.save(self.model.distil.state_dict(), "BERT_retraining/Data/core_model" + str(epoch))
             # torch.save(self.model.state_dict(), "BERT_retraining/Data/mlm_nsp_model" + str(epoch))
