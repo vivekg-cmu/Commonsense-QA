@@ -38,7 +38,7 @@ class DownstreamTrainer:
         batch_correct = 0
         total_correct = 0
         index = 0
-        for ans, label in train_loader:
+        for ans_a, ans_b, ans_c, label in train_loader:
             self.optimizer.zero_grad()
             if con.CUDA:
                 ans_a = ans_a.cuda()
@@ -56,8 +56,8 @@ class DownstreamTrainer:
             total_correct += con.BATCH_SIZE
             index += 1
 
-            if index % 5 == 0:
-                print("Running train loss", qa_loss)
+            if index % 100 == 0:
+                print("Running train loss", total_loss / index)
                 print("Running train acc", batch_correct / total_correct)
 
         print("Total train loss:", total_loss / index)

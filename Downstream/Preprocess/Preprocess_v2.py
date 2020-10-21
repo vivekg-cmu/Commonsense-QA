@@ -1,90 +1,50 @@
 import sys
 
 sys.path.append(".")
-import pandas as pd
-from transformers import DistilBertTokenizer
-from tqdm import tqdm
-from Downstream.utils import save_dictionary, load_dictionary
-from torch.utils import data
-from Downstream import constants as con
-from Downstream.Preprocess.Dataloaders_v2 import DownstreamDataset
+
+import torch
+from transformers import DistilBertTokenizer, DistilBertModel
 
 
-class Preprocessor:
+class DownstreamModel(torch.nn.Module):
+    def __init__(self, vocab_size=31000):
+        super(DownstreamModel, self).__init__()
+        self.vocab_size = vocab_size
+        self.distil = DistilBertModel.from_pretrained('distilbert-base-uncased',
+                                                      return_dict=True)
+        # for param in self.distil.parameters():
+        #   param.requires_grad = False
 
-    def __init__(self):
-        self.train_path = "Downstream/Data/train_pandas.csv"
-        self.valid_path = "Downstream/Data/dev_pandas.csv"
+        self.cls_layer = torch.nn.Linear(768, 768)
+        self.cls_layer2 = torch.nn.Linear(768, 128)
+        self.cls_layer3 = torch.nn.Linear(128, 1)
 
-        self.train_data = None
-        self.valid_data = None
-        self.tokenizer = None
+        self.relu = torch.nn.Tanh()
+        self.relu2 = torch.nn.Tanh()
 
-        self.train_loaders = None
-        self.valid_loaders = None
+        self.cls_loss_func = torch.nn.CrossEntropyLoss()
 
-        self.input_dict = {
-            "train": {
-                "ans_a": [],
-                "ans_b": [],
-                "ans_c": [],
-                "context": [],
-                "question": [],
-                "label": []
-            },
-            "valid": {
-                "ans": [],
-                "label": []
-            },
-        }
+    def forward(self, ans_a, ans_b, ans_c, labels):
+        ans_a = self.answers(ans_a)
+        ans_b = self.answers(ans_b)
+        ans_c = self.answers(ans_c)
+        ans_cls = torch.cat([ans_a, ans_b, ans_c], dim=-1)
+        qa_loss = self.qa_loss_f(answer_logits=ans_cls, labels=labels)
+        answer_preds = torch.argmax(ans_cls, dim=-1)
+        return answer_preds, qa_loss
 
-    def setup_tokenizer(self):
-        self.tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased',
-                                                             max_length=256, padding="max_length",
-                                                             truncation=True, is_split_into_words=False)
+    def answers(self, ans):
+        ans_cls = self.distil(ans).last_hidden_state[:, 0, :].squeeze(1)
+        answer_logits = self.cls_layer(ans_cls)
+        answer_logits = self.relu(answer_logits)
+        answer_logits = self.cls_layer2(answer_logits)
+        answer_logits = self.relu2(answer_logits)
+        score = self.cls_layer3(answer_logits)
 
-    def load_data(self):
-        self.train_data = pd.read_csv(self.train_path)
-        self.valid_data = pd.read_csv(self.valid_path)
+        return score
 
-    def tokenize_data(self, data, key):
-        print("Tokenizing", key, "data...")
-        questions = data['question']
-        labels = data['labels']
-        contexts = data['context']
-
-        for i in tqdm(range(len(data))):
-            question = self.tokenizer(text=questions[i])['input_ids']
-            context = self.tokenizer(text=contexts[i])['input_ids'][1:]
-            for ans in ["ans_a", "ans_b", "ans_c"]:
-                answer = self.tokenizer(text=data[ans][i])['input_ids'][1:]
-                input_line = question + context + answer
-                self.input_dict[key][ans].append(input_line + [0 for _ in range(128 - len(input_line))])
-            self.input_dict[key]["label"].append(labels[i])
-
-    def get_loaders(self, load_from_pkl=False):
-        if load_from_pkl:
-            try:
-                self.input_dict = load_dictionary("Downstream/Data/input_dict.pkl")
-            except Exception as e:
-                print(e)
-
-        train_dataset = DownstreamDataset(input_dict=self.input_dict["train"])
-        valid_dataset = DownstreamDataset(input_dict=self.input_dict["valid"])
-        loader_args = dict(shuffle=True, batch_size=con.BATCH_SIZE)
-        self.train_loaders = data.DataLoader(train_dataset, **loader_args)
-        self.valid_loaders = data.DataLoader(valid_dataset, **loader_args)
-
-    def setup(self):
-        self.load_data()
-        self.setup_tokenizer()
-        self.tokenize_data(data=self.train_data, key="train")
-        self.tokenize_data(data=self.valid_data, key="valid")
-        save_dictionary(dictionary=self.input_dict,
-                        save_path="Downstream/Data/input_dict.pkl")
-        self.get_loaders(load_from_pkl=True)
+    def qa_loss_f(self, answer_logits, labels):
+        return self.cls_loss_func(input=answer_logits,
+                                  target=labels)
 
 
-if __name__ == '__main__':
-    p = Preprocessor()
-    p.setup()
