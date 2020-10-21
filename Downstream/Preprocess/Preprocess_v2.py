@@ -79,12 +79,13 @@ class Preprocessor:
                 q_len = len(question)
                 con_len = len(context)
                 ans_len = len(ans)
+                total = q_len + con_len + ans_len
 
                 self.input_dict[key][ans].append(input_line + [0 for _ in range(256 - len(input_line))])
                 self.input_dict[key][ans + '_att'].append([1 for _ in range(len(input_line))] + [0 for _ in range(256 - len(input_line))])
                 self.input_dict[key][ans + '_token'].append([0 for _ in range(q_len)] +
                                                             [1 for _ in range(con_len)] +
-                                                            [2 for _ in range(ans_len)])
+                                                            [2 for _ in range(ans_len)] + [0 for _ in range(256 - total)])
 
             self.input_dict[key]["label"].append(labels[i])
 

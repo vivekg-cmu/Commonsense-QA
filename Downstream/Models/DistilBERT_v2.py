@@ -41,7 +41,7 @@ class DownstreamModel(torch.nn.Module):
         return answer_preds, qa_loss
 
     def answers(self, ans, att, token):
-        ans_cls = self.distil(input_ids=ans, attention_mask=att, token_type_ids=token).last_hidden_state[:, 0, :].squeeze(1)
+        ans_cls = self.distil(input_ids=ans, attention_mask=att).last_hidden_state[:, 0, :].squeeze(1)
         return ans_cls
 
     def qa_loss_f(self, answer_logits, labels):
