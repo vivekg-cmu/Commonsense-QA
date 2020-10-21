@@ -25,15 +25,11 @@ class Preprocessor:
 
         self.input_dict = {
             "train": {
-                "ans_a": [],
-                "ans_b": [],
-                "ans_c": [],
+                "ans": [],
                 "label": []
             },
             "valid": {
-                "ans_a": [],
-                "ans_b": [],
-                "ans_c": [],
+                "ans": [],
                 "label": []
             },
         }
@@ -48,18 +44,20 @@ class Preprocessor:
         self.valid_data = pd.read_csv(self.valid_path)
 
     def tokenize_data(self, data, key):
-
+        print("Tokenizing", key, "data...")
         questions = data['question']
         labels = data['labels']
         contexts = data['context']
 
         for i in tqdm(range(len(data))):
-            for ans in ["ans_a", "ans_b", "ans_c"]:
-                answer = self.tokenizer(text=data[ans][i])['input_ids']
-                context = self.tokenizer(text=contexts[i])['input_ids'][1:]
-                question = self.tokenizer(text=questions[i])['input_ids'][1:]
-                input_line = answer + context + question
-                self.input_dict[key][ans].append(input_line + [0 for _ in range(512 - len(input_line))])
+            question = self.tokenizer(text=questions[i])['input_ids']
+            context = self.tokenizer(text=contexts[i])['input_ids'][1:]
+            ans_a = self.tokenizer(text=data["ans_a"][i])['input_ids'][1:]
+            ans_b = self.tokenizer(text=data["ans_b"][i])['input_ids'][1:]
+            ans_c = self.tokenizer(text=data["ans_c"][i])['input_ids'][1:]
+
+            input_line = question + context + ans_a + ans_b + ans_c
+            self.input_dict[key]["ans"].append(input_line + [0 for _ in range(512 - len(input_line))])
             self.input_dict[key]["label"].append(labels[i])
 
     def get_loaders(self, load_from_pkl=False):
