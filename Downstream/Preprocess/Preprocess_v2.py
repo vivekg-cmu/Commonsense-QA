@@ -28,6 +28,12 @@ class Preprocessor:
                 "ans_a": [],
                 "ans_b": [],
                 "ans_c": [],
+                "ans_a_att": [],
+                "ans_b_att": [],
+                "ans_c_att": [],
+                "ans_a_token": [],
+                "ans_b_token": [],
+                "ans_c_token": [],
                 "context": [],
                 "question": [],
                 "label": []
@@ -36,6 +42,12 @@ class Preprocessor:
                 "ans_a": [],
                 "ans_b": [],
                 "ans_c": [],
+                "ans_a_token": [],
+                "ans_b_token": [],
+                "ans_c_token": [],
+                "ans_a_att": [],
+                "ans_b_att": [],
+                "ans_c_att": [],
                 "context": [],
                 "question": [],
 
@@ -64,7 +76,16 @@ class Preprocessor:
             for ans in ["ans_a", "ans_b", "ans_c"]:
                 answer = self.tokenizer(text=data[ans][i])['input_ids'][1:]
                 input_line = question + context + answer
+                q_len = len(question)
+                con_len = len(context)
+                ans_len = len(ans)
+
                 self.input_dict[key][ans].append(input_line + [0 for _ in range(256 - len(input_line))])
+                self.input_dict[key][ans + '_att'].append([1 for _ in range(len(input_line))] + [0 for _ in range(256 - len(input_line))])
+                self.input_dict[key][ans + '_token'].append([0 for _ in range(q_len)] +
+                                                            [1 for _ in range(con_len)] +
+                                                            [2 for _ in range(ans_len)])
+
             self.input_dict[key]["label"].append(labels[i])
 
     def get_loaders(self, load_from_pkl=False):
