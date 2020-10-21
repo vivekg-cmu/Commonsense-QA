@@ -3,6 +3,7 @@ sys.path.append(".")
 import pandas as pd
 import json
 
+
 class SocialIqaParser:
 
     def __init__(self):
@@ -39,7 +40,6 @@ class SocialIqaParser:
 
         return pd.DataFrame.from_dict(json_dict)
 
-
     def merge_x_and_labels(self, pandas_x, labels):
         pandas_x['labels'] = labels
         return pandas_x
@@ -57,4 +57,7 @@ class SocialIqaParser:
         pd.DataFrame.to_csv(dev_pandas, 'Downstream/Data/dev_pandas.csv')
 
 
+if __name__ == '__main__':
+    s = SocialIqaParser()
+    s.setup()
 

@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c059056e-f4e3-40a4-b3ec-06d2e6ca95b9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Downstream/Data/dev-labels.lst" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Downstream/Data/dev.jsonl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Downstream/Data/train-labels.lst" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Downstream/Data/train.jsonl" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Downstream/Data/dev_data.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Downstream/Data/dev_paper_pandas.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Downstream/Data/dev_paper_pandas2.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Downstream/Preprocess/Preprocess.py" afterPath="$PROJECT_DIR$/Downstream/Preprocess/Preprocess.py" />
+      <change beforePath="$PROJECT_DIR$/Downstream/Preprocess/SocialIqaParser.py" afterPath="$PROJECT_DIR$/Downstream/Preprocess/SocialIqaParser.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,8 +26,8 @@
       <file leaf-file-name="SocialIqaParser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/SocialIqaParser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="56" column="56" lean-forward="false" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
+            <state relative-caret-position="238">
+              <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -705,8 +697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/SocialIqaParser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="56" column="56" lean-forward="false" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
+        <state relative-caret-position="238">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
