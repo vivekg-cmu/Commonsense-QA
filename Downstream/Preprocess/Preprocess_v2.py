@@ -7,7 +7,7 @@ from tqdm import tqdm
 from Downstream.utils import save_dictionary, load_dictionary
 from torch.utils import data
 from Downstream import constants as con
-from Downstream.Preprocess.Dataloaders import DownstreamDataset
+from Downstream.Preprocess.Dataloaders_v2 import DownstreamDataset
 
 
 class Preprocessor:
