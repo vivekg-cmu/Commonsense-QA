@@ -58,7 +58,7 @@ class DownstreamTrainer:
 
             answer_preds, qa_loss = self.model(ans_a, ans_b, ans_c, ans_a_att, ans_b_att, ans_c_att, ans_a_token,
                                                ans_b_token, ans_c_token, label)
-            total_loss += qa_loss
+            total_loss += qa_loss.cpu().detach().numpy()
             qa_loss.backward()
             torch.nn.utils.clip_grad_norm_(self.model.parameters(), 0.5)
             self.optimizer.step()
@@ -67,12 +67,52 @@ class DownstreamTrainer:
             total_correct += con.BATCH_SIZE
             index += 1
 
-            if index % 100 == 0:
-                print("Running train loss", total_loss / index)
-                print("Running train acc", batch_correct / total_correct)
+            # if index % 100 == 0:
+            #     print("Running train loss", total_loss / index)
+            #     print("Running train acc", batch_correct / total_correct)
 
-        print("Total train loss:", total_loss / index)
-        print("Total train acc:", batch_correct / total_correct)
+        print("Train loss:", total_loss / index)
+        print("Train acc:", batch_correct / total_correct)
+
+    def valid_model(self):
+        valid_loader = self.preprocessor.valid_loaders
+
+        self.model.eval()
+        total_loss = 0
+        batch_correct = 0
+        total_correct = 0
+        index = 0
+        for ans_a, ans_b, ans_c, ans_a_att, ans_b_att, ans_c_att, \
+            ans_a_token, ans_b_token, ans_c_token, label in valid_loader:
+            if con.CUDA:
+                ans_a = ans_a.cuda()
+                ans_b = ans_b.cuda()
+                ans_c = ans_c.cuda()
+
+                ans_a_att = ans_a_att.cuda()
+                ans_b_att = ans_b_att.cuda()
+                ans_c_att = ans_c_att.cuda()
+
+                ans_a_token = ans_a_token.cuda()
+                ans_b_token = ans_b_token.cuda()
+                ans_c_token = ans_c_token.cuda()
+
+                label = label.cuda()
+
+            answer_preds, qa_loss = self.model(ans_a, ans_b, ans_c, ans_a_att, ans_b_att, ans_c_att, ans_a_token,
+                                               ans_b_token, ans_c_token, label)
+            total_loss += qa_loss.cpu().detach().numpy()
+            batch_correct += self.evaluate(answer_preds=answer_preds,
+                                           labels=label)
+            total_correct += con.BATCH_SIZE
+            index += 1
+
+            # if index % 100 == 0:
+            #     print("Running train loss", total_loss / index)
+            #     print("Running train acc", batch_correct / total_correct)
+
+        print("Valid loss:", total_loss / index)
+        print("Valid acc:", batch_correct / total_correct)
         print('------------------------')
 
     def evaluate(self, answer_preds, labels):
@@ -84,8 +124,10 @@ class DownstreamTrainer:
         self.setup_preprocessed_data()
         self.setup_model()
         self.setup_scheduler_optimizer()
-        for epoch in range(30):
+        for epoch in range(10):
+            print("Epoch:", epoch)
             self.train_model()
+            self.valid_model()
             # torch.save(self.model.distil.state_dict(), "BERT_retraining/Data/core_model" + str(epoch))
             # torch.save(self.model.state_dict(), "BERT_retraining/Data/mlm_nsp_model" + str(epoch))
 

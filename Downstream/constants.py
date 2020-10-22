@@ -1,2 +1,2 @@
 CUDA = True
-BATCH_SIZE = 32
+BATCH_SIZE = 8
