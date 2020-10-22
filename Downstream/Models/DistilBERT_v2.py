@@ -7,7 +7,7 @@ from transformers import DistilBertTokenizer, BertModel
 
 
 class DownstreamModel(torch.nn.Module):
-    def __init__(self, vocab_size=31000, load_path="Downstream/Data/core_model7"):
+    def __init__(self, vocab_size=31000, load_path=None):
         super(DownstreamModel, self).__init__()
         self.vocab_size = vocab_size
         self.distil = BertModel.from_pretrained('bert-base-uncased',
