@@ -22,7 +22,7 @@ class DownstreamModel(torch.nn.Module):
 
         self.cls_layer = torch.nn.Linear(768 * 5, 768)
         self.cls_layer2 = torch.nn.Linear(768, 128)
-        self.cls_layer3 = torch.nn.Linear(128, 4)
+        self.cls_layer3 = torch.nn.Linear(128, 5)
 
         self.relu = torch.nn.ReLU()
         self.relu2 = torch.nn.ReLU()
