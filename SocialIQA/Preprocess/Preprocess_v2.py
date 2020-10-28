@@ -78,7 +78,7 @@ class Preprocessor:
                 input_line = question + context + answer
                 q_len = len(question)
                 con_len = len(context)
-                ans_len = len(ans)
+                ans_len = len(answer)
                 total = q_len + con_len + ans_len
 
                 self.input_dict[key][ans].append(input_line + [0 for _ in range(256 - len(input_line))])
