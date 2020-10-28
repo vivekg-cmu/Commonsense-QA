@@ -20,7 +20,7 @@ class DownstreamModel(torch.nn.Module):
         # for param in self.distil.parameters():
         #   param.requires_grad = False
 
-        self.cls_layer = torch.nn.Linear(768 * 3, 768)
+        self.cls_layer = torch.nn.Linear(768 * 5, 768)
         self.cls_layer2 = torch.nn.Linear(768, 128)
         self.cls_layer3 = torch.nn.Linear(128, 4)
 

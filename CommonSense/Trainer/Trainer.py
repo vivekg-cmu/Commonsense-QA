@@ -60,7 +60,6 @@ class CommonSenseTrainer:
             answer_preds, qa_loss = self.model(ans_a, ans_b, ans_c, ans_d, ans_e,
                                                ans_a_att, ans_b_att, ans_c_att,
                                                ans_d_att, ans_e_att,
-                                               ans_a_token,
                                                label)
             total_loss += qa_loss.cpu().detach().numpy()
             qa_loss.backward()
@@ -86,8 +85,8 @@ class CommonSenseTrainer:
         batch_correct = 0
         total_correct = 0
         index = 0
-        for ans_a, ans_b, ans_c, ans_a_att, ans_b_att, ans_c_att, \
-            ans_a_token, ans_b_token, ans_c_token, label in valid_loader:
+        for ans_a, ans_b, ans_c, ans_d, ans_e, ans_a_att, ans_b_att, ans_c_att, \
+            ans_d_att, ans_e_att, label in valid_loader:
             if con.CUDA:
                 ans_a = ans_a.cuda()
                 ans_b = ans_b.cuda()

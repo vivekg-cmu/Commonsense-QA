@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c059056e-f4e3-40a4-b3ec-06d2e6ca95b9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/CommonSense/Preprocess/Dataloaders.py" afterPath="$PROJECT_DIR$/CommonSense/Preprocess/Dataloaders.py" />
-      <change beforePath="$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py" afterPath="$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py" />
+      <change beforePath="$PROJECT_DIR$/CommonSense/Models/DistilBERT.py" afterPath="$PROJECT_DIR$/CommonSense/Models/DistilBERT.py" />
+      <change beforePath="$PROJECT_DIR$/CommonSense/Trainer/Trainer.py" afterPath="$PROJECT_DIR$/CommonSense/Trainer/Trainer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,10 +24,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Preprocessor.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Preprocessor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="-63">
               <caret line="43" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding />
             </state>
@@ -37,8 +37,18 @@
       <file leaf-file-name="Trainer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CommonSense/Trainer/Trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="129" column="40" lean-forward="true" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
+            <state relative-caret-position="234">
+              <caret line="61" column="68" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DistilBERT.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CommonSense/Models/DistilBERT.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,10 +123,10 @@
         <option value="$PROJECT_DIR$/Downstream/Models/DistilBERT_v2.py" />
         <option value="$PROJECT_DIR$/CommonSense/Preprocess/ParseCommonSense.py" />
         <option value="$PROJECT_DIR$/SocialIQA/Preprocess/Preprocess_v2.py" />
-        <option value="$PROJECT_DIR$/CommonSense/Models/DistilBERT.py" />
-        <option value="$PROJECT_DIR$/CommonSense/Trainer/Trainer.py" />
         <option value="$PROJECT_DIR$/CommonSense/Preprocess/Dataloaders.py" />
         <option value="$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py" />
+        <option value="$PROJECT_DIR$/CommonSense/Trainer/Trainer.py" />
+        <option value="$PROJECT_DIR$/CommonSense/Models/DistilBERT.py" />
       </list>
     </option>
   </component>
@@ -159,7 +169,19 @@
               <item name="Commonsense-QA" type="b2602c69:ProjectViewProjectNode" />
               <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
               <item name="CommonSense" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Commonsense-QA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
+              <item name="CommonSense" type="462c0819:PsiDirectoryNode" />
               <item name="Preprocess" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Commonsense-QA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
+              <item name="CommonSense" type="462c0819:PsiDirectoryNode" />
+              <item name="Trainer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -660,14 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonSense/Models/DistilBERT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="62" lean-forward="false" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -692,10 +706,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonSense/Trainer/Trainer.py">
+    <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="129" column="40" lean-forward="true" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
+        <state relative-caret-position="-63">
+          <caret line="43" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -708,10 +722,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py">
+    <entry file="file://$PROJECT_DIR$/CommonSense/Trainer/Trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="43" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+        <state relative-caret-position="234">
+          <caret line="61" column="68" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonSense/Models/DistilBERT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
         </state>
       </provider>
