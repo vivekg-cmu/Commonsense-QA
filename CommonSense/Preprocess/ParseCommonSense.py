@@ -2,7 +2,7 @@ import sys
 
 sys.path.append(".")
 import ast
-
+from CommonSense.utils import save_dictionary
 
 class ParseCommonSense:
     options = ['A', 'B', 'C', 'D', 'E']
@@ -39,8 +39,12 @@ class ParseCommonSense:
     def setup(self):
         self.load_json_data(self.train_data)
         self.load_json_data(self.dev_data)
+        save_dictionary({
+            "train": self.train_data,
+            "dev": self.dev_data
+        }, "CommonSense/Data/input_dict.pkl")
 
 
 pcs = ParseCommonSense()
-pcs.load_json_data()
+pcs.setup()
 

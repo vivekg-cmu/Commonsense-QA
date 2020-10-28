@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c059056e-f4e3-40a4-b3ec-06d2e6ca95b9" name="Default" comment="" />
+    <list default="true" id="c059056e-f4e3-40a4-b3ec-06d2e6ca95b9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/CommonSense/Preprocess/ParseCommonSense.py" afterPath="$PROJECT_DIR$/CommonSense/Preprocess/ParseCommonSense.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +16,18 @@
       <file leaf-file-name="ParseCommonSense.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/ParseCommonSense.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="44" column="19" lean-forward="false" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+            <state relative-caret-position="167">
+              <caret line="44" column="43" lean-forward="false" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SocialIQA/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -117,18 +129,6 @@
               <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
               <item name="CommonSense" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Commonsense-QA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
-              <item name="CommonSense" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Commonsense-QA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
-              <item name="CommonSense" type="462c0819:PsiDirectoryNode" />
-              <item name="Preprocess" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -145,11 +145,11 @@
       <recent name="$PROJECT_DIR$/CommonSense/Data" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CommonSense" />
       <recent name="$PROJECT_DIR$/Downstream/Models" />
       <recent name="$PROJECT_DIR$/Downstream/Preprocess" />
       <recent name="$PROJECT_DIR$/Downstream/Data" />
       <recent name="$PROJECT_DIR$/Downstream" />
-      <recent name="$PROJECT_DIR$/BERT_retraining/concepnet" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -507,13 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SocialIQA/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -647,10 +640,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SocialIQA/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/ParseCommonSense.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="44" column="19" lean-forward="false" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+        <state relative-caret-position="167">
+          <caret line="44" column="43" lean-forward="false" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
           <folding />
         </state>
       </provider>
