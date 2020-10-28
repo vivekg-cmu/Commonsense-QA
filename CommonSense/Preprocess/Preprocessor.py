@@ -4,7 +4,9 @@ sys.path.append(".")
 from CommonSense.utils import load_dictionary, save_dictionary
 from transformers import BertTokenizer
 from tqdm import tqdm
-
+from torch.utils import data
+from CommonSense.Preprocess.Dataloaders import DownstreamDataset
+from CommonSense import constants as con
 
 class Preprocessor:
     options = ['A', 'B', 'C', 'D', 'E']
@@ -38,11 +40,25 @@ class Preprocessor:
                 self.tokenized_dict[key][option + '_att'].append([1 for _ in range(len(input_line))] + [0 for _ in range(Preprocessor.max_seq_len - len(input_line))])
             self.tokenized_dict[key]["label"].append(data_dict['y'][i])
 
+    def get_loaders(self, load_from_pkl=False):
+        if load_from_pkl:
+            try:
+                self.input_dict = load_dictionary("Downstream/Data/tokenized_dict.pkl")
+            except Exception as e:
+                print(e)
+
+        train_dataset = DownstreamDataset(input_dict=self.input_dict["train"])
+        valid_dataset = DownstreamDataset(input_dict=self.input_dict["valid"])
+        loader_args = dict(shuffle=True, batch_size=con.BATCH_SIZE)
+        self.train_loaders = data.DataLoader(train_dataset, **loader_args)
+        self.valid_loaders = data.DataLoader(valid_dataset, **loader_args)
+
     def setup(self):
         self.tokenize_data(data_dict=self.input_dict['train'], key='train')
         self.tokenize_data(data_dict=self.input_dict['dev'], key='dev')
         save_dictionary(dictionary=self.tokenized_dict,
                         save_path="CommonSense/Data/tokenized_dict.pkl")
+        self.get_loaders(load_from_pkl=True)
 
 
 if __name__ == '__main__':
