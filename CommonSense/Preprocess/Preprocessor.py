@@ -43,12 +43,12 @@ class Preprocessor:
     def get_loaders(self, load_from_pkl=False):
         if load_from_pkl:
             try:
-                self.input_dict = load_dictionary("Downstream/Data/tokenized_dict.pkl")
+                self.tokenized_dict = load_dictionary("CommonSense/Data/tokenized_dict.pkl")
             except Exception as e:
                 print(e)
 
-        train_dataset = DownstreamDataset(input_dict=self.input_dict["train"])
-        valid_dataset = DownstreamDataset(input_dict=self.input_dict["valid"])
+        train_dataset = DownstreamDataset(input_dict=self.tokenized_dict["train"])
+        valid_dataset = DownstreamDataset(input_dict=self.tokenized_dict["dev"])
         loader_args = dict(shuffle=True, batch_size=con.BATCH_SIZE)
         self.train_loaders = data.DataLoader(train_dataset, **loader_args)
         self.valid_loaders = data.DataLoader(valid_dataset, **loader_args)
