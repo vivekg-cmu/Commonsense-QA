@@ -4,10 +4,10 @@ sys.path.append(".")
 import pandas as pd
 from transformers import DistilBertTokenizer
 from tqdm import tqdm
-from Downstream.utils import save_dictionary, load_dictionary
+from SocialIQA.utils import save_dictionary, load_dictionary
 from torch.utils import data
-from Downstream import constants as con
-from Downstream.Preprocess.Dataloaders import DownstreamDataset
+from SocialIQA import constants as con
+from SocialIQA.Preprocess.Dataloaders import DownstreamDataset
 
 
 class Preprocessor:
