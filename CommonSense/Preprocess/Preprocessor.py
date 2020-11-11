@@ -10,7 +10,7 @@ from CommonSense import constants as con
 
 class Preprocessor:
     options = ['A', 'B', 'C', 'D', 'E']
-    max_seq_len = 64
+    max_seq_len = 128
 
     def __init__(self):
         self.input_dict = load_dictionary("CommonSense/Data/input_dict.pkl")

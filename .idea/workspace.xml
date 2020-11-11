@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c059056e-f4e3-40a4-b3ec-06d2e6ca95b9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/CommonSense/Trainer/Trainer.py" afterPath="$PROJECT_DIR$/CommonSense/Trainer/Trainer.py" />
+      <change beforePath="$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py" afterPath="$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trainer.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Trainer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CommonSense/Trainer/Trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="122" column="56" lean-forward="false" selection-start-line="122" selection-start-column="56" selection-end-line="122" selection-end-column="56" />
+            <state relative-caret-position="126">
+              <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Preprocessor.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Preprocessor.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -113,9 +113,9 @@
         <option value="$PROJECT_DIR$/CommonSense/Preprocess/ParseCommonSense.py" />
         <option value="$PROJECT_DIR$/SocialIQA/Preprocess/Preprocess_v2.py" />
         <option value="$PROJECT_DIR$/CommonSense/Preprocess/Dataloaders.py" />
-        <option value="$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py" />
         <option value="$PROJECT_DIR$/CommonSense/Models/DistilBERT.py" />
         <option value="$PROJECT_DIR$/CommonSense/Trainer/Trainer.py" />
+        <option value="$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py" />
       </list>
     </option>
   </component>
@@ -699,14 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SocialIQA/Models/DistilBERT_v2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-18">
@@ -725,8 +717,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CommonSense/Trainer/Trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="122" column="56" lean-forward="false" selection-start-line="122" selection-start-column="56" selection-end-line="122" selection-end-column="56" />
+        <state relative-caret-position="126">
+          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding />
         </state>
       </provider>
