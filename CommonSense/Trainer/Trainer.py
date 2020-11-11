@@ -4,7 +4,7 @@ sys.path.append(".")
 import torch
 from CommonSense.Preprocess.Preprocessor import Preprocessor
 from CommonSense.Models.DistilBERT import DownstreamModel
-from SocialIQA import constants as con
+from CommonSenseg import constants as con
 from torch import optim
 
 
