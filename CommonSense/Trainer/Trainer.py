@@ -87,24 +87,28 @@ class CommonSenseTrainer:
         index = 0
         for ans_a, ans_b, ans_c, ans_d, ans_e, ans_a_att, ans_b_att, ans_c_att, \
             ans_d_att, ans_e_att, label in valid_loader:
+            self.optimizer.zero_grad()
             if con.CUDA:
                 ans_a = ans_a.cuda()
                 ans_b = ans_b.cuda()
                 ans_c = ans_c.cuda()
+                ans_d = ans_d.cuda()
+                ans_e = ans_e.cuda()
 
                 ans_a_att = ans_a_att.cuda()
                 ans_b_att = ans_b_att.cuda()
                 ans_c_att = ans_c_att.cuda()
+                ans_d_att = ans_d_att.cuda()
+                ans_e_att = ans_e_att.cuda()
 
-                ans_a_token = ans_a_token.cuda()
-                ans_b_token = ans_b_token.cuda()
-                ans_c_token = ans_c_token.cuda()
 
                 label = label.cuda()
 
-            answer_preds, qa_loss = self.model(ans_a, ans_b, ans_c, ans_a_att, ans_b_att, ans_c_att, ans_a_token,
-                                               ans_b_token, ans_c_token, label)
-            total_loss += qa_loss.cpu().detach().numpy()
+            answer_preds, _ = self.model(ans_a, ans_b, ans_c, ans_d, ans_e,
+                                               ans_a_att, ans_b_att, ans_c_att,
+                                               ans_d_att, ans_e_att,
+                                               label)
+
             batch_correct += self.evaluate(answer_preds=answer_preds,
                                            labels=label)
             total_correct += con.BATCH_SIZE
@@ -116,7 +120,7 @@ class CommonSenseTrainer:
 
         print("Valid loss:", total_loss / index)
         print("Valid acc:", batch_correct / total_correct)
-        print('------------------------')
+        print('-----------------------------------------')
 
     def evaluate(self, answer_preds, labels):
         labels = labels.view(-1)
@@ -131,8 +135,6 @@ class CommonSenseTrainer:
             print("Epoch:", epoch)
             self.train_model()
             self.valid_model()
-            # torch.save(self.model.distil.state_dict(), "BERT_retraining/Data/core_model" + str(epoch))
-            # torch.save(self.model.state_dict(), "BERT_retraining/Data/mlm_nsp_model" + str(epoch))
 
 
 if __name__ == '__main__':
