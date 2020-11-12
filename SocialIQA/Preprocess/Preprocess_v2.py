@@ -4,10 +4,10 @@ sys.path.append(".")
 import pandas as pd
 from transformers import DistilBertTokenizer
 from tqdm import tqdm
-from Downstream.utils import save_dictionary, load_dictionary
+from SocialIQA.utils import save_dictionary, load_dictionary
 from torch.utils import data
-from Downstream import constants as con
-from Downstream.Preprocess.Dataloaders import DownstreamDataset
+from SocialIQA import constants as con
+from SocialIQA.Preprocess.Dataloaders_v2 import DownstreamDataset
 
 
 class Preprocessor:
@@ -25,11 +25,32 @@ class Preprocessor:
 
         self.input_dict = {
             "train": {
-                "ans": [],
+                "ans_a": [],
+                "ans_b": [],
+                "ans_c": [],
+                "ans_a_att": [],
+                "ans_b_att": [],
+                "ans_c_att": [],
+                "ans_a_token": [],
+                "ans_b_token": [],
+                "ans_c_token": [],
+                "context": [],
+                "question": [],
                 "label": []
             },
             "valid": {
-                "ans": [],
+                "ans_a": [],
+                "ans_b": [],
+                "ans_c": [],
+                "ans_a_token": [],
+                "ans_b_token": [],
+                "ans_c_token": [],
+                "ans_a_att": [],
+                "ans_b_att": [],
+                "ans_c_att": [],
+                "context": [],
+                "question": [],
+
                 "label": []
             },
         }
@@ -52,12 +73,20 @@ class Preprocessor:
         for i in tqdm(range(len(data))):
             question = self.tokenizer(text=questions[i])['input_ids']
             context = self.tokenizer(text=contexts[i])['input_ids'][1:]
-            ans_a = self.tokenizer(text=data["ans_a"][i])['input_ids'][1:]
-            ans_b = self.tokenizer(text=data["ans_b"][i])['input_ids'][1:]
-            ans_c = self.tokenizer(text=data["ans_c"][i])['input_ids'][1:]
+            for ans in ["ans_a", "ans_b", "ans_c"]:
+                answer = self.tokenizer(text=data[ans][i])['input_ids'][1:]
+                input_line = question + context + answer
+                q_len = len(question)
+                con_len = len(context)
+                ans_len = len(answer)
+                total = q_len + con_len + ans_len
 
-            input_line = question + context + ans_a + ans_b + ans_c
-            self.input_dict[key]["ans"].append(input_line + [0 for _ in range(512 - len(input_line))])
+                self.input_dict[key][ans].append(input_line + [0 for _ in range(256 - len(input_line))])
+                self.input_dict[key][ans + '_att'].append([1 for _ in range(len(input_line))] + [0 for _ in range(256 - len(input_line))])
+                self.input_dict[key][ans + '_token'].append([0 for _ in range(q_len)] +
+                                                            [1 for _ in range(con_len)] +
+                                                            [2 for _ in range(ans_len)] + [0 for _ in range(256 - total)])
+
             self.input_dict[key]["label"].append(labels[i])
 
     def get_loaders(self, load_from_pkl=False):

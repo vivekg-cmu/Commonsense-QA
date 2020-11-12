@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c059056e-f4e3-40a4-b3ec-06d2e6ca95b9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/CommonSense/Trainer/Trainer.py" afterPath="$PROJECT_DIR$/CommonSense/Trainer/Trainer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,74 +14,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Pretraining.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py">
+      <file leaf-file-name="DistilBERT.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonSense/Models/DistilBERT.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2214">
-              <caret line="123" column="36" lean-forward="false" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
+            <state relative-caret-position="432">
+              <caret line="24" column="48" lean-forward="false" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Preprocess_v2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/Preprocess_v2.py">
+      <file leaf-file-name="Trainer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonSense/Trainer/Trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="80" column="34" lean-forward="false" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-              <folding>
-                <marker date="1603317716455" expanded="true" signature="2545:2656" ph="..." />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dataloaders_v2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/Dataloaders_v2.py">
+      <file leaf-file-name="train_rand_split.jsonl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonSense/Data/train_rand_split.jsonl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="59" lean-forward="false" selection-start-line="26" selection-start-column="15" selection-end-line="27" selection-end-column="59" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dev_rand_split.jsonl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonSense/Data/dev_rand_split.jsonl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Trainer_v2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SocialIQA/Trainer/Trainer_v2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="DistilBERT_v2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Downstream/Models/DistilBERT_v2.py">
+        <entry file="file://$PROJECT_DIR$/SocialIQA/Models/DistilBERT_v2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="41" column="54" lean-forward="true" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+            <state relative-caret-position="306">
+              <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trainer_v2.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Downstream/Trainer/Trainer_v2.py">
+      <file leaf-file-name="Preprocessor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="74" column="16" lean-forward="false" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+            <state relative-caret-position="252">
+              <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_pretraining_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py">
+      <file leaf-file-name="ParseCommonSense.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/ParseCommonSense.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3186">
-              <caret line="181" column="4" lean-forward="false" selection-start-line="181" selection-start-column="4" selection-end-line="181" selection-end-column="4" />
+            <state relative-caret-position="126">
+              <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Downstream/constants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-              <folding />
+      <file leaf-file-name="wikihowAll.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BERT_retraining/Data/wikihowAll.csv">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             </state>
           </provider>
         </entry>
@@ -132,6 +150,12 @@
         <option value="$PROJECT_DIR$/Downstream/constants.py" />
         <option value="$PROJECT_DIR$/BERT_retraining/Models/DistilBERT.py" />
         <option value="$PROJECT_DIR$/Downstream/Models/DistilBERT_v2.py" />
+        <option value="$PROJECT_DIR$/CommonSense/Preprocess/ParseCommonSense.py" />
+        <option value="$PROJECT_DIR$/SocialIQA/Preprocess/Preprocess_v2.py" />
+        <option value="$PROJECT_DIR$/CommonSense/Preprocess/Dataloaders.py" />
+        <option value="$PROJECT_DIR$/CommonSense/Models/DistilBERT.py" />
+        <option value="$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py" />
+        <option value="$PROJECT_DIR$/CommonSense/Trainer/Trainer.py" />
       </list>
     </option>
   </component>
@@ -168,13 +192,13 @@
             <path>
               <item name="Commonsense-QA" type="b2602c69:ProjectViewProjectNode" />
               <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
-              <item name="Downstream" type="462c0819:PsiDirectoryNode" />
+              <item name="BERT_retraining" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Commonsense-QA" type="b2602c69:ProjectViewProjectNode" />
               <item name="Commonsense-QA" type="462c0819:PsiDirectoryNode" />
-              <item name="Downstream" type="462c0819:PsiDirectoryNode" />
-              <item name="Preprocess" type="462c0819:PsiDirectoryNode" />
+              <item name="BERT_retraining" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -188,12 +212,15 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CommonSense/Data" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CommonSense" />
       <recent name="$PROJECT_DIR$/Downstream/Models" />
       <recent name="$PROJECT_DIR$/Downstream/Preprocess" />
       <recent name="$PROJECT_DIR$/Downstream/Data" />
       <recent name="$PROJECT_DIR$/Downstream" />
-      <recent name="$PROJECT_DIR$/BERT_retraining/concepnet" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -208,7 +235,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Pretraining">
+  <component name="RunManager" selected="Python.Trainer">
     <configuration name="Dataloaders" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -281,18 +308,38 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="4">
+    <configuration name="Trainer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CommonSense/Trainer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Commonsense-QA" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CommonSense/Trainer/Trainer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Preprocess" />
       <item index="1" class="java.lang.String" itemvalue="Python.Dataloaders" />
       <item index="2" class="java.lang.String" itemvalue="Python.Preprocessors" />
       <item index="3" class="java.lang.String" itemvalue="Python.Pretraining" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Trainer" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.Pretraining" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Preprocessors" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Dataloaders" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Preprocess" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.Trainer" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Pretraining" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Preprocessors" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Dataloaders" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Preprocess" />
       </list>
     </recent_temporary>
   </component>
@@ -314,17 +361,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="-4" width="1315" height="780" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2674961" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2674961" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32348368" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32348368" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -333,6 +381,25 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2674961" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32348368" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -351,78 +418,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/tokenization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Pretraining.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/Models/Pretraining.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="121" lean-forward="false" selection-start-line="17" selection-start-column="121" selection-end-line="17" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/Models/DistilBERT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="41" column="68" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Preprocessors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="52" column="119" lean-forward="false" selection-start-line="51" selection-start-column="30" selection-end-line="52" selection-end-column="119" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BERT_retraining/Models/Pretraining.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -554,13 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Downstream/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BERT_retraining/DataSetup/Dataloaders.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -584,79 +572,45 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Downstream/Data/Untitled.ipynb" />
-    <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/SocialIqaParser.py">
+    <entry file="file://$PROJECT_DIR$/SocialIQA/Preprocess/SocialIqaParser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Downstream/Data/train_pandas.csv">
+    <entry file="file://$PROJECT_DIR$/SocialIQA/Data/train_pandas.csv">
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="601974">
           <caret line="33443" column="0" lean-forward="false" selection-start-line="33442" selection-start-column="0" selection-end-line="33443" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/Dataloaders.py">
+    <entry file="file://$PROJECT_DIR$/SocialIQA/Preprocess/Dataloaders.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/Preprocess.py">
+    <entry file="file://$PROJECT_DIR$/SocialIQA/Preprocess/Preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Downstream/Models/DistilBERT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="19" column="45" lean-forward="false" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Downstream/Trainer/Trainer.py">
+    <entry file="file://$PROJECT_DIR$/SocialIQA/Trainer/Trainer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="25" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/Preprocess_v2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="80" column="34" lean-forward="false" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-          <folding>
-            <marker date="1603317716455" expanded="true" signature="2545:2656" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Downstream/constants.py">
+    <entry file="file://$PROJECT_DIR$/SocialIQA/constants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Downstream/Preprocess/Dataloaders_v2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="59" lean-forward="false" selection-start-line="26" selection-start-column="15" selection-end-line="27" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3186">
-          <caret line="181" column="4" lean-forward="false" selection-start-line="181" selection-start-column="4" selection-end-line="181" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,25 +623,129 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BERT_retraining/Trainers/Pretraining.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
+        <state relative-caret-position="1413">
           <caret line="123" column="36" lean-forward="false" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/create_pretraining_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="181" column="4" lean-forward="false" selection-start-line="181" selection-start-column="4" selection-end-line="181" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SocialIQA/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SocialIQA/Models/DistilBERT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-157">
+          <caret line="19" column="45" lean-forward="false" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SocialIQA/Preprocess/Dataloaders_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SocialIQA/Preprocess/Preprocess_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/Dataloaders.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="29" column="56" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonSense/Trainer/run.sh" />
+    <entry file="file://$PROJECT_DIR$/CommonSense/Models/DistilBERT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="48" lean-forward="false" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Downstream/Models/DistilBERT_v2.py">
+    <entry file="file://$PROJECT_DIR$/SocialIQA/Models/DistilBERT_v2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="54" lean-forward="true" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+        <state relative-caret-position="306">
+          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Downstream/Trainer/Trainer_v2.py">
+    <entry file="file://$PROJECT_DIR$/CommonSense/Data/train_rand_split.jsonl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="74" column="16" lean-forward="false" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonSense/Data/dev_rand_split.jsonl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SocialIQA/Trainer/Trainer_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonSense/Trainer/Trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/Preprocessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonSense/Preprocess/ParseCommonSense.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BERT_retraining/Data/wikihowAll.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>

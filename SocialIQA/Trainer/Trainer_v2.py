@@ -2,9 +2,9 @@ import sys
 
 sys.path.append(".")
 import torch
-from Downstream.Preprocess.Preprocess_v2 import Preprocessor
-from Downstream.Models.DistilBERT_v2 import DownstreamModel
-from Downstream import constants as con
+from SocialIQA.Preprocess.Preprocess_v2 import Preprocessor
+from SocialIQA.Models.DistilBERT_v2 import DownstreamModel
+from SocialIQA import constants as con
 from torch import optim
 
 
