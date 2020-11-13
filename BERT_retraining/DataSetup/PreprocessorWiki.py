@@ -48,7 +48,7 @@ class PreprocessorsWiki:
 
     def run_features(self):
         train_features = self.run_pretraining(key='train')
-        valid_features = self.run_pretraining(key='train')
+        valid_features = self.run_pretraining(key='valid')
         utils.save_dictionary(dictionary=train_features,
                               save_path="BERT_retraining/Data/train_wiki.pkl")
         utils.save_dictionary(dictionary=valid_features,
@@ -64,6 +64,7 @@ class PreprocessorsWiki:
 
         self.train_loaders = data.DataLoader(train_dataset, **loader_args)
         self.valid_loaders = data.DataLoader(valid_dataset, **loader_args)
+
 
 if __name__ == '__main__':
     PreprocessorsWiki().get_loaders(load_flag=False)

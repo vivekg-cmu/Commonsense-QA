@@ -4,7 +4,7 @@ sys.path.append(".")
 
 from torch.utils import data
 import numpy as np
-zzz
+
 class PretrainingDataset(data.Dataset):
     def __init__(self, input_dict):
         self.input_dict = input_dict
