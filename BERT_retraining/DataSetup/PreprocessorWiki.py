@@ -19,52 +19,25 @@ class PreprocessorsWiki:
             do_lower_case=True,
             input_file=path + key + ".txt",
             random_seed=12345,
-            max_seq_length=32,
-            dupe_factor=4,
-            max_predictions_per_seq=5,
+            max_seq_length=128,
+            dupe_factor=1,
+            max_predictions_per_seq=20,
             masked_lm_prob=0.15,
-            output_file="Data/wikihow_output.txt",
+            output_file="not_used",
             short_seq_prob=0.1)
 
         instances, tokenizer = pretraining.run_data_preprocessing()
         features = pretraining.write_instance_to_features(instances=instances, tokenizer=tokenizer,
-                                                          max_seq_length=32,
-                                                          max_predictions_per_seq=5)
+                                                          max_seq_length=128,
+                                                          max_predictions_per_seq=20)
         utils.save_dictionary(dictionary=features,
                               save_path="./BERT_retraining/Data/"
                                         + key + "_wiki.pkl")
         return features
 
-    def get_features(self, load_flag=False):
-        if load_flag:
-            train_features = \
-                utils.load_dictionary("BERT_retraining/Data/train_wiki.pkl")
-            valid_features = \
-                utils.load_dictionary("BERT_retraining/Data/valid_wiki.pkl")
-        else:
-            train_features, valid_features = self.run_features()
-
-        return train_features, valid_features
-
-    def run_features(self):
-        train_features = self.run_pretraining(key='train')
-        valid_features = self.run_pretraining(key='valid')
-        utils.save_dictionary(dictionary=train_features,
-                              save_path="BERT_retraining/Data/train_wiki.pkl")
-        utils.save_dictionary(dictionary=valid_features,
-                              save_path="BERT_retraining/Data/valid_wiki.pkl")
-        return train_features, valid_features
-
-    def get_loaders(self, load_flag=False):
-        train_features, valid_features = self.get_features(load_flag=load_flag)
-        train_dataset = PretrainingDataset(input_dict=train_features)
-        valid_dataset = PretrainingDataset(input_dict=valid_features)
-
-        loader_args = dict(shuffle=True, batch_size=con.BATCH_SIZE)
-
-        self.train_loaders = data.DataLoader(train_dataset, **loader_args)
-        self.valid_loaders = data.DataLoader(valid_dataset, **loader_args)
-
+    def run_batch_features(self):
+        for batch_number in range(200):
+            self.run_pretraining(key=str(batch_number))
 
 if __name__ == '__main__':
-    PreprocessorsWiki().get_loaders(load_flag=False)
+    PreprocessorsWiki().run_batch_features()

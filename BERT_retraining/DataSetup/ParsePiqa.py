@@ -35,9 +35,9 @@ class ParsePiqa:
         self.load_wikihow()
         index = 0
         batch_number = 0
-
+        marker = len(self.data['text']) // 200
         for text in tqdm(self.data['text']):
-            if index % 200 == 0:
+            if index % marker == 0:
                 output_writer = open(self.dest_path + str(batch_number), 'w')
                 batch_number += 1
             self.parse_wikihow(text, output_writer)
