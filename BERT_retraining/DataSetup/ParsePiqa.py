@@ -10,8 +10,7 @@ class ParsePiqa:
     def __init__(self, source_path="./BERT_retraining/Data/wikihowSep.csv",
                  dest_path="./BERT_retraining/Data/clean_wikihow_"):
         self.source_path = source_path
-        self.output_writer_train = open(dest_path + "train.txt", "w")
-        self.output_writer_valid = open(dest_path + "valid.txt", "w")
+        self.dest_path = dest_path
         self.data = None
 
     def load_wikihow(self):
@@ -34,21 +33,15 @@ class ParsePiqa:
 
     def setup(self):
         self.load_wikihow()
-        error_count = 0
         index = 0
+        batch_number = 0
+
         for text in tqdm(self.data['text']):
-
-            if index < int(len(self.data) * 0.95):
-                error_status = self.parse_wikihow(text, self.output_writer_train)
-            else:
-                error_status = self.parse_wikihow(text, self.output_writer_valid)
-
-            if not error_status:
-                error_count += 1
-
+            if index % 200 == 0:
+                output_writer = open(self.dest_path + str(batch_number))
+                batch_number += 1
+            self.parse_wikihow(text, output_writer)
             index += 1
-        print(f"Parsing completed with {error_count} errors")
-
 
 if __name__ == '__main__':
     parse_piqa = ParsePiqa()
