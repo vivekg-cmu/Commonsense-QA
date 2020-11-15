@@ -16,9 +16,9 @@ class PretrainingTrainer:
         self.model = None
         self.optimizer = None
 
-    def setup_preprocessed_data(self):
+    def setup_preprocessed_data(self, key=0):
         self.preprocessor = PreprocessorsWiki()
-        self.preprocessor.get_loaders()
+        self.preprocessor.get_loaders(key=key)
 
     def setup_model(self):
         # Create multilingual vocabulary
@@ -74,7 +74,7 @@ class PretrainingTrainer:
         print("Total train loss:", total_loss / index)
         print("Total train acc:", batch_correct / total_correct)
         print('------------------------')
-        self.validation()
+
 
     def validation(self):
         valid_loader = self.preprocessor.valid_loaders
@@ -116,13 +116,17 @@ class PretrainingTrainer:
         return correct.cpu().detach().numpy()
 
     def run_pretraining(self):
-        self.setup_preprocessed_data()
-        self.setup_model()
-        self.setup_scheduler_optimizer()
         for epoch in range(30):
+            self.setup_preprocessed_data(key=0)
+            if epoch == 0:
+                self.setup_model()
+                self.setup_scheduler_optimizer()
+            self.train_model()
+            self.setup_preprocessed_data(key=1)
             self.train_model()
             torch.save(self.model.distil.state_dict(), "BERT_retraining/Data/core_model" + str(epoch))
             torch.save(self.model.state_dict(), "BERT_retraining/Data/mlm_nsp_model" + str(epoch))
+            self.validation()
 
 
 if __name__ == '__main__':

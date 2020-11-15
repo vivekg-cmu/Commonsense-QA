@@ -40,7 +40,7 @@ class PreprocessorsWiki:
         for batch_number in range(200):
             self.run_pretraining(key=str(batch_number))
 
-    def load_pickle_files(self):
+    def load_pickle_files(self, key=0):
         train_features = {
             "input_ids": [],
             "input_mask": [],
@@ -51,7 +51,13 @@ class PreprocessorsWiki:
             "next_sentence_labels": []
         }
 
-        for index in range(100):
+        if key == 0:
+            start = 0
+            end = 100
+        else:
+            start = 100
+            end = 199
+        for index in range(start, end):
             features = utils.load_dictionary(f"BERT_retraining/Data/{index}_wiki.pkl")
             for key in train_features:
                 train_features[key].extend(features[key])
@@ -59,8 +65,8 @@ class PreprocessorsWiki:
         valid_features = utils.load_dictionary("BERT_retraining/Data/199_wiki.pkl")
         return train_features, valid_features
 
-    def get_loaders(self):
-        train_features, valid_features = self.load_pickle_files()
+    def get_loaders(self, key=0):
+        train_features, valid_features = self.load_pickle_files(key=0)
         train_dataset = PretrainingDataset(input_dict=train_features)
         valid_dataset = PretrainingDataset(input_dict=valid_features)
         loader_args = dict(shuffle=True, batch_size=con.BATCH_SIZE)
