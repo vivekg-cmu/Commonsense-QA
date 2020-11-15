@@ -3,7 +3,7 @@ import sys
 sys.path.append(".")
 
 import torch
-from BERT_retraining.DataSetup.Preprocessors import Preprocessors
+from BERT_retraining.DataSetup.PreprocessorWiki import PreprocessorsWiki
 from BERT_retraining.Models.DistilBERT import PretrainingModel
 from BERT_retraining import constants as con
 from torch import optim
@@ -17,8 +17,8 @@ class PretrainingTrainer:
         self.optimizer = None
 
     def setup_preprocessed_data(self):
-        self.preprocessor = Preprocessors()
-        self.preprocessor.get_loaders(load_flag=True)
+        self.preprocessor = PreprocessorsWiki()
+        self.preprocessor.get_loaders()
 
     def setup_model(self):
         # Create multilingual vocabulary

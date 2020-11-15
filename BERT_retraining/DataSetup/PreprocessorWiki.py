@@ -51,7 +51,7 @@ class PreprocessorsWiki:
             "next_sentence_labels": []
         }
 
-        for index in range(199):
+        for index in range(100):
             features = utils.load_dictionary(f"BERT_retraining/Data/{index}_wiki.pkl")
             for key in train_features:
                 train_features[key].extend(features[key])
