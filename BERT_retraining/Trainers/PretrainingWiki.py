@@ -64,7 +64,7 @@ class PretrainingTrainer:
 
             batch_correct += self.evaluate(masked_outputs=masked_outputs,
                                            masked_lm_ids=masked_lm_ids)
-            total_correct += (con.BATCH_SIZE * 5)
+            total_correct += (con.BATCH_SIZE * 20)
             index += 1
 
             if index % 200 == 0:
@@ -102,7 +102,7 @@ class PretrainingTrainer:
             batch_loss = mlm_loss + nsp_loss
             total_loss += batch_loss.cpu().detach().numpy()
             batch_correct += self.evaluate(masked_outputs=masked_outputs, masked_lm_ids=masked_lm_ids)
-            total_correct += (con.BATCH_SIZE * 5)
+            total_correct += (con.BATCH_SIZE * 20)
             index += 1
 
         print("Total valid loss:", total_loss / index)
