@@ -5,6 +5,7 @@ from BERT_retraining.DataSetup.Dataloaders import PretrainingDataset
 from BERT_retraining import utils
 from torch.utils import data
 from BERT_retraining import constants as con
+import glob
 
 class PreprocessorsWiki:
 
@@ -38,6 +39,34 @@ class PreprocessorsWiki:
     def run_batch_features(self):
         for batch_number in range(200):
             self.run_pretraining(key=str(batch_number))
+
+    def load_pickle_files(self):
+        train_features = {
+            "input_ids": [],
+            "input_mask": [],
+            "segment_ids": [],
+            "masked_lm_positions": [],
+            "masked_lm_ids": [],
+            "masked_lm_weights": [],
+            "next_sentence_labels": []
+        }
+
+        for index in range(199):
+            features = utils.load_dictionary(f"BERT_retraining/Data/{index}_wiki.pkl")
+            for key in train_features:
+                train_features[key].extend(features[key])
+
+        valid_features = utils.load_dictionary("BERT_retraining/Data/199_wiki.pkl")
+        return train_features, valid_features
+
+    def get_loaders(self):
+        train_features, valid_features = self.load_pickle_files()
+        train_dataset = PretrainingDataset(input_dict=train_features)
+        valid_dataset = PretrainingDataset(input_dict=valid_features)
+        loader_args = dict(shuffle=True, batch_size=con.BATCH_SIZE)
+        self.train_loaders = data.DataLoader(train_dataset, **loader_args)
+        self.valid_loaders = data.DataLoader(valid_dataset, **loader_args)
+
 
 if __name__ == '__main__':
     PreprocessorsWiki().run_batch_features()
