@@ -13,8 +13,8 @@ from SocialIQA.Preprocess.Dataloaders import DownstreamDataset
 class Preprocessor:
 
     def __init__(self):
-        self.train_path = "Downstream/Data/train_pandas.csv"
-        self.valid_path = "Downstream/Data/dev_pandas.csv"
+        self.train_path = "SocialIQA/Data/train_pandas.csv"
+        self.valid_path = "SocialIQA/Data/dev_pandas.csv"
 
         self.train_data = None
         self.valid_data = None
@@ -63,7 +63,7 @@ class Preprocessor:
     def get_loaders(self, load_from_pkl=False):
         if load_from_pkl:
             try:
-                self.input_dict = load_dictionary("Downstream/Data/input_dict.pkl")
+                self.input_dict = load_dictionary("SocialIQA/Data/input_dict.pkl")
             except Exception as e:
                 print(e)
 
@@ -79,7 +79,7 @@ class Preprocessor:
         self.tokenize_data(data=self.train_data, key="train")
         self.tokenize_data(data=self.valid_data, key="valid")
         save_dictionary(dictionary=self.input_dict,
-                        save_path="Downstream/Data/input_dict.pkl")
+                        save_path="SocialIQA/Data/input_dict.pkl")
         self.get_loaders(load_from_pkl=True)
 
 
