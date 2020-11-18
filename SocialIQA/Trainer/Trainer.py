@@ -16,7 +16,7 @@ class DownstreamTrainer:
 
     def setup_preprocessed_data(self):
         self.preprocessor = Preprocessor()
-        self.preprocessor.get_loaders(load_from_pkl=Truex)
+        self.preprocessor.get_loaders(load_from_pkl=True)
 
     def setup_model(self):
         # Create multilingual vocabulary
